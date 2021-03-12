@@ -1,0 +1,19 @@
+@mixin gen_font($location, $name ) {
+    @font-face {
+        font-family: $name;
+        src: url(quote($location));
+    }
+}
+
+@include gen_font("../Fonts/LEMONMILK-Bold.otf", "LemonMilk");
+@include gen_font( "../Fonts/Lato-Black.ttf", "LatoBlack");
+@include gen_font( "../Fonts/Lato-Bold.ttf", "LatoBold");
+@include gen_font( "../Fonts/peace_sans.otf", "PeaceSans");
+@include gen_font( "../Fonts/OpenSans-Regular.ttf", "OpenSans" );
+@include gen_font( "../Fonts/OpenSans-ExtraBold.ttf", "OpenSansExtraBold" );
+@include gen_font( "../Fonts/OpenSans-Light.ttf", "OpenSansLight");
+@include gen_font( "../Fonts/OpenSans-Bold.ttf", "OpenSansBold");
+@include gen_font( "../Fonts/Pump Demi Bold LET Plain.ttf", "PumpDemi");
+
+
+
