@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#header {
+  grid-area: header;
+}
+
+#who_we {
+  grid-area: who_we;
+}
+
+#what_do {
+  grid-area: what_do;
+}
+
+#how_works {
+  grid-area: how_works;
+}
+
+#team {
+  grid-area: team;
+}
+
+#client_say {
+  grid-area: client_say;
+}
+
+#in_touch {
+  grid-area: in_touch;
+}
+
+body {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: minmax(250px, auto);
+  grid-template-areas: "header header" "who_we who_we" "what_do what_do" "how_works how_works" "team team" "client_say client_say" "in_touch in_touch";
+}
+
+/*# sourceMappingURL=Style.css.map */

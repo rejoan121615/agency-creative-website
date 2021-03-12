@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$section_list: "header" "who_we" "what_do" "how_works" "team" "client_say"
+    "in_touch";
+
+@mixin area_name($name) {
+    grid-area: $name;
+}
+
+
+
+@each $i in $section_list {
+    ##{$i} {
+        // display: grid;
+        // grid-template-columns: 1fr 1fr;
+        grid-area: unquote($string: $i);
+    }
+}
+
+body {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: minmax(250px, auto);
+    grid-template-areas: "header header" "who_we who_we" "what_do what_do" "how_works how_works" "team team" "client_say client_say" "in_touch in_touch";
+
+    // header style 
+    #header {
+        // nav bar 
+    }
+}
