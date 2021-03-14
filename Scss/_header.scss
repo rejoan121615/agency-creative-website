@@ -17,11 +17,14 @@
             @include center;
             min-height: initial;
         }
+        @media only screen and (min-width: $xl) {
+            width: 95%;
+        }
     }
     #brand-icon {
         flex-basis: 80%;
-        @media only screen and (min-width: $md) {
-            flex-basis: 35%;
+        @media only screen and (min-width: $lg) {
+            flex-basis: auto;
         }
 
         h1 {
@@ -30,6 +33,13 @@
             text-align: center;
             color: white;
             text-transform: capitalize;
+
+            @media only screen and (min-width: $lg) {
+                margin-top: 10px;
+            }
+            @media only screen and (min-width: $xl) {
+                font-size: 2.8em;
+            }
         }
     }
     #nav_btn {
@@ -55,17 +65,25 @@
         opacity: 0;
         transition: opacity 0.5s, width 0.4s;
         // responsive for menium screen
-        @media only screen and (min-width: $md) {
+        @media only screen and (min-width: $lg) {
             opacity: 1;
             margin-top: initial;
+            flex-basis: 75%;
+            overflow: hidden;
         }
         #navbar {
             width: 100%;
             background-color: #ff5100;
             padding: 25px 0px;
-            // responsive for medium screen 
-            @media only screen and (min-width: $md) {
+            // responsive for medium screen
+            @media only screen and (min-width: $lg) {
                 @include flex;
+                background-color: transparent;
+                max-width: 700px;
+                float: right;
+            }
+            @media only screen and (min-width: $xl) {
+                min-width: 800px;
             }
             li {
                 font-family: "LatoBold";
@@ -80,8 +98,9 @@
                 &:first-child {
                     border-top: none;
                 }
-                @media only screen and (min-width: $md) {
-                    
+                @media only screen and (min-width: $lg) {
+                    border: none;
+                    padding: 0;
                 }
             }
         }
