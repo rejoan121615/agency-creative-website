@@ -8,6 +8,7 @@
         width: 100%;
         @include auto_flex;
         position: relative;
+        margin-top: 15px;
     }
     #brand-icon {
         flex-basis: 80%;
@@ -21,27 +22,24 @@
         }
     }
     #nav_btn {
-        flex-basis: 20%;
+        // flex-basis: 20%;
+        margin-left: 30px;
         background-color: transparent;
         border: none;
         outline: none;
+        order: -1;
+        i {
+            color: white;
+        }
     }
     // nav wrapper
     @at-root #nav_wrapper {
         width: 100%;
-        background-color: #00000088;
-        position: absolute;
-        top: 0;
-        left: 0;
+        margin-top: 15px;
         #navbar {
             width: 100%;
-            max-width: 400px;
             background-color: #ff5100;
-            margin-top: 35px;
-            margin-bottom: 35px;
-            padding-top: 25px;
-            padding-bottom: 25px;
-            border-radius: 0px 8px 8px 0px;
+            padding: 25px 0px;
             li {
                 font-family: "LatoBold";
                 font-size: 1em;
