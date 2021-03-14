@@ -1,0 +1,27 @@
+
+// screen variable
+$x_sm: "576px";
+$sm: "576px";
+$md: "768px";
+$lg: "992px";
+$xl: "1200px";
+$xxl: "1400px";
+
+
+@mixin auto_flex {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+@mixin center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin flex {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    @content;
+}

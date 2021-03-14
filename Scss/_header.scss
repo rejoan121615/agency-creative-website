@@ -9,9 +9,20 @@
         @include auto_flex;
         position: relative;
         margin-top: 15px;
+        max-height: 100px;
+
+        // media query
+        @media only screen and (min-width: $lg) {
+            width: 90%;
+            @include center;
+            min-height: initial;
+        }
     }
     #brand-icon {
         flex-basis: 80%;
+        @media only screen and (min-width: $md) {
+            flex-basis: 35%;
+        }
 
         h1 {
             font-family: "LatoBlack";
@@ -29,6 +40,9 @@
         border: none;
         outline: none;
         order: -1;
+        @media only screen and (min-width: $lg) {
+            display: none;
+        }
         i {
             color: white;
         }
@@ -37,10 +51,22 @@
     @at-root #nav_wrapper {
         width: 100%;
         margin-top: 15px;
+        // display: none;
+        opacity: 0;
+        transition: opacity 0.5s, width 0.4s;
+        // responsive for menium screen
+        @media only screen and (min-width: $md) {
+            opacity: 1;
+            margin-top: initial;
+        }
         #navbar {
             width: 100%;
             background-color: #ff5100;
             padding: 25px 0px;
+            // responsive for medium screen 
+            @media only screen and (min-width: $md) {
+                @include flex;
+            }
             li {
                 font-family: "LatoBold";
                 font-size: 1em;
@@ -54,8 +80,10 @@
                 &:first-child {
                     border-top: none;
                 }
+                @media only screen and (min-width: $md) {
+                    
+                }
             }
-            // cross btn 
         }
     }
 }

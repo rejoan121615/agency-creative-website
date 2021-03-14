@@ -48,9 +48,23 @@
   justify-content: space-between;
   position: relative;
   margin-top: 15px;
+  max-height: 100px;
+}
+@media only screen and (min-width: 992px) {
+  #header .container {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: initial;
+  }
 }
 #header #brand-icon {
   flex-basis: 80%;
+}
+@media only screen and (min-width: 768px) {
+  #header #brand-icon {
+    flex-basis: 35%;
+  }
 }
 #header #brand-icon h1 {
   font-family: "LatoBlack";
@@ -67,17 +81,37 @@
   outline: none;
   order: -1;
 }
+@media only screen and (min-width: 992px) {
+  #header #nav_btn {
+    display: none;
+  }
+}
 #header #nav_btn i {
   color: white;
 }
 #nav_wrapper {
   width: 100%;
   margin-top: 15px;
+  opacity: 0;
+  transition: opacity 0.5s, width 0.4s;
+}
+@media only screen and (min-width: 768px) {
+  #nav_wrapper {
+    opacity: 1;
+    margin-top: initial;
+  }
 }
 #nav_wrapper #navbar {
   width: 100%;
   background-color: #ff5100;
   padding: 25px 0px;
+}
+@media only screen and (min-width: 768px) {
+  #nav_wrapper #navbar {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
 }
 #nav_wrapper #navbar li {
   font-family: "LatoBold";
@@ -93,7 +127,6 @@
 #nav_wrapper #navbar li:first-child {
   border-top: none;
 }
-
 * {
   margin: 0;
   padding: 0;
