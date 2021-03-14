@@ -34,6 +34,68 @@
   font-family: "PumpDemi";
   src: url("../Fonts/Pump Demi Bold LET Plain.ttf");
 }
+#header {
+  width: 100%;
+  background-image: url("../Img/main-bg.png");
+  background-position: center center;
+  background-size: cover;
+  background-color: #ff061d;
+}
+#header .container {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  position: relative;
+}
+#header #brand-icon {
+  flex-basis: 80%;
+}
+#header #brand-icon h1 {
+  font-family: "LatoBlack";
+  font-size: 2.5em;
+  text-align: center;
+  color: white;
+  text-transform: capitalize;
+}
+#header #nav_btn {
+  flex-basis: 20%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+#nav_wrapper {
+  width: 100%;
+  background-color: #00000088;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#nav_wrapper #navbar {
+  width: 100%;
+  max-width: 400px;
+  background-color: #ff5100;
+  margin-top: 35px;
+  margin-bottom: 35px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border-radius: 0px 8px 8px 0px;
+}
+#nav_wrapper #navbar li {
+  font-family: "LatoBold";
+  font-size: 1em;
+  text-align: center;
+  list-style: none;
+  color: white;
+  text-transform: uppercase;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-top: 1px solid white;
+}
+#nav_wrapper #navbar li:first-child {
+  border-top: none;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -74,19 +136,6 @@ body {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: minmax(250px, auto);
   grid-template-areas: "header header" "who_we who_we" "what_do what_do" "how_works how_works" "team team" "client_say client_say" "in_touch in_touch";
-}
-body #header {
-  background-image: url("../Img/main-bg.png");
-  background-position: center center;
-  background-size: cover;
-  background-color: #ff061d;
-}
-body #header nav {
-  height: 80px;
-  overflow: hidden;
-}
-body #header nav #navbar {
-  display: none;
 }
 
 /*# sourceMappingURL=Style.css.map */
