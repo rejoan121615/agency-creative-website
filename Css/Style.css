@@ -60,7 +60,8 @@
   text-transform: capitalize;
 }
 #header #nav_btn {
-  margin-left: 30px;
+  margin-left: 10px;
+  padding: 10px 15px;
   background-color: transparent;
   border: none;
   outline: none;
