@@ -1,5 +1,5 @@
 // screen variable
-$x_sm: "320px";
+$x_sm: "400px";
 $sm: "576px";
 $md: "768px";
 $lg: "992px";
@@ -24,9 +24,9 @@ $xxl: "1400px";
     @content;
 }
 
-// @mixin grid ($col, $row) {
-//     display: grid;
-//     grid-template-columns: $col;
-//     grid-template-rows: $row;
-//     @content;
-// }
+@mixin resp($screen) {
+    @media only screen and (min-width: $screen) {
+        @content;
+    }
+}
+
