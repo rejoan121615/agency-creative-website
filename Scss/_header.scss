@@ -61,7 +61,7 @@
     @at-root #nav_wrapper {
         width: 100%;
         margin-top: 15px;
-        // display: none;
+        display: none;
         opacity: 0;
         transition: opacity 0.5s, width 0.4s;
         // responsive for menium screen
@@ -70,6 +70,7 @@
             margin-top: initial;
             flex-basis: 75%;
             overflow: hidden;
+            display: block;
         }
         #navbar {
             width: 100%;
@@ -101,6 +102,55 @@
                 @media only screen and (min-width: $lg) {
                     border: none;
                     padding: 0;
+                }
+            }
+        }
+    }
+
+    // -------------------------------------------------
+    // main area style
+    // --------------------------------------------------
+    @at-root {
+        #main {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas: "image" "texts";
+            padding-left: 15px;
+            padding-right: 15px;
+
+            .img_container {
+                grid-area: image;
+                width: 100%;
+                img {
+                    width: 100%;
+                }
+            }
+            .texts {
+                width: 100%;
+                grid-area: texts;
+                // text style
+                font-family: "LemonMilk";
+                text-align: center;
+                color: white;
+                text-transform: uppercase;
+                // heading
+                h1 {
+                    font-size: 3.8em;
+                    line-height: 55px;
+                    @media only screen and (min-width: $x_sm) {
+                        
+                    }
+                    font-size: 6em;
+                    line-height: 95px;
+                }
+                h4 {
+                    font-size: 2.5em;
+                    line-height: 40px;
+                    @media only screen and (min-width: $x_sm) {
+                        font-size: 4em;
+                        line-height: 70px;
+                    }
                 }
             }
         }
