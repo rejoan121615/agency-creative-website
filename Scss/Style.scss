@@ -1,13 +1,14 @@
-// import files 
-@import 'fonts';
-
+// import files
+@import "fonts";
+@import "mixingVar";
+@import "header";
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-// fonts variable 
+// fonts variable
 $sec_head_f: "PeaceSans";
 $btn_f: "LatoBold";
 $lato_black: "LatoBlack";
@@ -16,9 +17,6 @@ $main_sec_f: "LemonMilk";
 $para: "OpenSans";
 $para_head_f: "OpenSansExtraBold";
 $para_head_f2: "OpenSansBold";
-
-
-
 
 $section_list: "header" "who_we" "what_do" "how_works" "team" "client_say"
     "in_touch";
@@ -43,24 +41,4 @@ body {
     grid-template-areas: "header header" "who_we who_we" "what_do what_do" "how_works how_works" "team team" "client_say client_say" "in_touch in_touch";
 
     // header style
-    #header {
-        background-image: url("../Img/main-bg.png");
-        background-position: center center;
-        background-size: cover;
-        background-color: #ff061d;
-        // nav bar
-        nav {
-            height: 80px;
-            overflow: hidden;
-            .brand-icon {
-            }
-
-            #navbar {
-                display: none;
-            }
-        }
-        // main section style
-        #main {
-        }
-    }
 }

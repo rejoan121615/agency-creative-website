@@ -1,0 +1,158 @@
+#header {
+    width: 100%;
+    background-image: url("../Img/main-bg.png");
+    background-position: center center;
+    background-size: cover;
+    background-color: #ff061d;
+    .container {
+        width: 100%;
+        @include auto_flex;
+        position: relative;
+        margin-top: 15px;
+        max-height: 100px;
+
+        // media query
+        @media only screen and (min-width: $lg) {
+            width: 90%;
+            @include center;
+            min-height: initial;
+        }
+        @media only screen and (min-width: $xl) {
+            width: 95%;
+        }
+    }
+    #brand-icon {
+        flex-basis: 80%;
+        @media only screen and (min-width: $lg) {
+            flex-basis: auto;
+        }
+
+        h1 {
+            font-family: "LatoBlack";
+            font-size: 2.5em;
+            text-align: center;
+            color: white;
+            text-transform: capitalize;
+
+            @media only screen and (min-width: $lg) {
+                margin-top: 10px;
+            }
+            @media only screen and (min-width: $xl) {
+                font-size: 2.8em;
+            }
+        }
+    }
+    #nav_btn {
+        // flex-basis: 20%;
+        margin-left: 10px;
+        padding: 10px 15px;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        order: -1;
+        @media only screen and (min-width: $lg) {
+            display: none;
+        }
+        i {
+            color: white;
+        }
+    }
+    // nav wrapper
+    @at-root #nav_wrapper {
+        width: 100%;
+        margin-top: 15px;
+        display: none;
+        opacity: 0;
+        transition: opacity 0.5s, width 0.4s;
+        // responsive for menium screen
+        @media only screen and (min-width: $lg) {
+            opacity: 1;
+            margin-top: initial;
+            flex-basis: 75%;
+            overflow: hidden;
+            display: block;
+        }
+        #navbar {
+            width: 100%;
+            background-color: #ff5100;
+            padding: 25px 0px;
+            // responsive for medium screen
+            @media only screen and (min-width: $lg) {
+                @include flex;
+                background-color: transparent;
+                max-width: 700px;
+                float: right;
+            }
+            @media only screen and (min-width: $xl) {
+                min-width: 800px;
+            }
+            li {
+                font-family: "LatoBold";
+                font-size: 1em;
+                text-align: center;
+                list-style: none;
+                color: white;
+                text-transform: uppercase;
+                padding-top: 15px;
+                padding-bottom: 15px;
+                border-top: 1px solid white;
+                &:first-child {
+                    border-top: none;
+                }
+                @media only screen and (min-width: $lg) {
+                    border: none;
+                    padding: 0;
+                }
+            }
+        }
+    }
+
+    // -------------------------------------------------
+    // main area style
+    // --------------------------------------------------
+    @at-root {
+        #main {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas: "image" "texts";
+            padding-left: 15px;
+            padding-right: 15px;
+
+            .img_container {
+                grid-area: image;
+                width: 100%;
+                img {
+                    width: 100%;
+                }
+            }
+            .texts {
+                width: 100%;
+                grid-area: texts;
+                // text style
+                font-family: "LemonMilk";
+                text-align: center;
+                color: white;
+                text-transform: uppercase;
+                // heading
+                h1 {
+                    font-size: 3.8em;
+                    line-height: 55px;
+                    @media only screen and (min-width: $x_sm) {
+                        
+                    }
+                    font-size: 6em;
+                    line-height: 95px;
+                }
+                h4 {
+                    font-size: 2.5em;
+                    line-height: 40px;
+                    @media only screen and (min-width: $x_sm) {
+                        font-size: 4em;
+                        line-height: 70px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,3 +1,4 @@
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -5,33 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./Css/Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
 </head>
 <body>
     <!-- head  -->
     <header id="header">
         <!-- nav  -->
-        <nav>
-            <div class="brand-icon">
+        <div class="container">
+            <div id="brand-icon">
                 <h1>agency</h1>
             </div>
             <!-- nav btn  -->
-            <button>Click Me</button>
+            <button id="nav_btn">
+                <i class="fas fa-bars fa-2x"></i>
+            </button>
             <!-- nav  -->
-            <ul id="navbar">
-                <li>home</li>
-                <li>about us</li>
-                <li>team</li>
-                <li>services</li>
-                <li>process</li>
-                <li>clients</li>
-                <li>work</li>
-                <li>search</li>
-            </ul>
-        </nav>
+            <nav id="nav_wrapper">
+                <ul id="navbar">
+                    <li>home</li>
+                    <li>about us</li>
+                    <li>team</li>
+                    <li>services</li>
+                    <li>process</li>
+                    <li>clients</li>
+                    <li>work</li>
+                    <li>search</li>
+                </ul>
+            </nav>
+            
+        </div class="container">
         <!-- main section  -->
         <main id="main">
             <div class="img_container">
-                <img src="" alt="">
+                <img src="./Img/frature-img.png" alt="Man with sketch board">
             </div>
             <div class="texts">
                 <h1>think</h1>
@@ -174,6 +181,8 @@
                 </div>
             </li>
         </ul>
+        <!-- js  -->
+        <script src="./Js/Scripts.js"></script>
     </footer>
 </body>
 </html>
