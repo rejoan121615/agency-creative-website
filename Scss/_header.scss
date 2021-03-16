@@ -127,9 +127,9 @@
             }
             @include resp($lg) {
                 grid-template-columns: 35px repeat(5, 1fr) 35px;
-                grid-template-rows: repeat(6, minmax(75px, 150px));
+                grid-template-rows: repeat(5, minmax(75px, 150px));
                 grid-template-areas: initial;
-                max-width: unquote($string: );
+                max-width: unquote($string: $lg);
                 @include center;
             }
             .img_container {
@@ -144,6 +144,9 @@
                     margin-top: initial;
                     position: relative;
                     z-index: 10;
+                }
+                @include resp($xl) {
+                    max-width: $xl;
                 }
 
                 img {
@@ -169,6 +172,9 @@
                     grid-row: 2/ -2;
                     position: relative;
                     z-index: 5;
+                }
+                @include resp($xl) {
+                    max-width: $xl;
                 }
                 // heading
                 h1 {
@@ -211,6 +217,13 @@
                         font-size: 70px;
                         line-height: 70px;
                     }
+                }
+
+                // btn style
+                .btn {
+                    @extend %btn;
+                    display: inline-block;
+                    margin-top: 75px;
                 }
             }
         }

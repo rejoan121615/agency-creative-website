@@ -1,18 +1,354 @@
-/* Error: Expected expression.
- *     ,
- * 132 |                 max-width: unquote($string: );
- *     |                                             ^
- *     '
- *   Scss\_header.scss 132:45  @import
- *   Scss\Style.scss 4:9       root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Expected expression.\a     \2577 \a 132 \2502                  max-width: unquote($string: );\d\a     \2502                                              ^\a     \2575 \a   Scss\\_header.scss 132:45  @import\a   Scss\\Style.scss 4:9       root stylesheet";
+@font-face {
+  font-family: "LemonMilk";
+  src: url("../Fonts/LEMONMILK-Bold.otf");
 }
+@font-face {
+  font-family: "LatoBlack";
+  src: url("../Fonts/Lato-Black.ttf");
+}
+@font-face {
+  font-family: "LatoBold";
+  src: url("../Fonts/Lato-Bold.ttf");
+}
+@font-face {
+  font-family: "PeaceSans";
+  src: url("../Fonts/peace_sans.otf");
+}
+@font-face {
+  font-family: "OpenSans";
+  src: url("../Fonts/OpenSans-Regular.ttf");
+}
+@font-face {
+  font-family: "OpenSansExtraBold";
+  src: url("../Fonts/OpenSans-ExtraBold.ttf");
+}
+@font-face {
+  font-family: "OpenSansLight";
+  src: url("../Fonts/OpenSans-Light.ttf");
+}
+@font-face {
+  font-family: "OpenSansBold";
+  src: url("../Fonts/OpenSans-Bold.ttf");
+}
+@font-face {
+  font-family: "PumpDemi";
+  src: url("../Fonts/Pump Demi Bold LET Plain.ttf");
+}
+#main .texts .btn {
+  font-family: "LatoBold";
+  font-size: 18px;
+  text-transform: uppercase;
+  color: black;
+  text-align: center;
+  padding: 16px 35px;
+  border-radius: 40px;
+  background-color: white;
+  text-decoration: none;
+}
+
+#header {
+  width: 100%;
+  background-image: url("../Img/main-bg.png");
+  background-position: center center;
+  background-size: cover;
+  background-color: #ff061d;
+}
+#header .container {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 15px;
+  max-height: 100px;
+}
+@media only screen and (min-width: 992px) {
+  #header .container {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: initial;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #header .container {
+    width: 95%;
+  }
+}
+#header #brand-icon {
+  flex-basis: 70%;
+}
+@media only screen and (min-width: 576px) {
+  #header #brand-icon {
+    flex-basis: 80%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #header #brand-icon {
+    flex-basis: auto;
+  }
+}
+#header #brand-icon h1 {
+  font-family: "LatoBlack";
+  font-size: 2.5em;
+  text-align: center;
+  color: white;
+  text-transform: capitalize;
+}
+@media only screen and (min-width: 992px) {
+  #header #brand-icon h1 {
+    margin-top: 10px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #header #brand-icon h1 {
+    font-size: 2.8em;
+  }
+}
+#header #nav_btn {
+  margin-left: 10px;
+  padding: 10px 15px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  order: -1;
+}
+@media only screen and (min-width: 992px) {
+  #header #nav_btn {
+    display: none;
+  }
+}
+#header #nav_btn i {
+  color: white;
+}
+#nav_wrapper {
+  width: 100%;
+  margin-top: 15px;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s, width 0.4s;
+}
+@media only screen and (min-width: 992px) {
+  #nav_wrapper {
+    opacity: 1;
+    margin-top: initial;
+    flex-basis: 75%;
+    overflow: hidden;
+    display: block;
+  }
+}
+#nav_wrapper #navbar {
+  width: 100%;
+  background-color: #ff5100;
+  padding: 25px 0px;
+}
+@media only screen and (min-width: 992px) {
+  #nav_wrapper #navbar {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    background-color: transparent;
+    max-width: 700px;
+    float: right;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #nav_wrapper #navbar {
+    min-width: 800px;
+  }
+}
+#nav_wrapper #navbar li {
+  font-family: "LatoBold";
+  font-size: 1em;
+  text-align: center;
+  list-style: none;
+  color: white;
+  text-transform: uppercase;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-top: 1px solid white;
+}
+#nav_wrapper #navbar li:first-child {
+  border-top: none;
+}
+@media only screen and (min-width: 992px) {
+  #nav_wrapper #navbar li {
+    border: none;
+    padding: 0;
+  }
+}
+
+#main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2fr 1fr;
+  grid-template-areas: "image" "texts";
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media only screen and (min-width: 400px) {
+  #main {
+    grid-template-rows: 2fr 1.5fr;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #main {
+    grid-template-columns: 35px repeat(5, 1fr) 35px;
+    grid-template-rows: repeat(5, minmax(75px, 150px));
+    grid-template-areas: initial;
+    max-width: 992px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+#main .img_container {
+  grid-area: image;
+  width: 100%;
+  margin-top: 80px;
+  text-align: center;
+}
+@media only screen and (min-width: 992px) {
+  #main .img_container {
+    grid-row: 1/-2;
+    grid-column: 4/-1;
+    margin-top: initial;
+    position: relative;
+    z-index: 10;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #main .img_container {
+    max-width: "1200px";
+  }
+}
+#main .img_container img {
+  width: 100%;
+  max-width: 620px;
+  display: inline-block;
+}
+@media only screen and (min-width: 992px) {
+  #main .img_container img {
+    max-width: initial;
+  }
+}
+#main .texts {
+  width: 100%;
+  grid-area: texts;
+  font-family: "LemonMilk";
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 992px) {
+  #main .texts {
+    grid-column: 2/span 3;
+    grid-row: 2/-2;
+    position: relative;
+    z-index: 5;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #main .texts {
+    max-width: "1200px";
+  }
+}
+#main .texts h1 {
+  font-size: 3.2em;
+  line-height: 55px;
+}
+@media only screen and (min-width: 400px) {
+  #main .texts h1 {
+    font-size: 75px;
+    line-height: 65px;
+  }
+  #main .texts h1:first-child {
+    margin-top: 40px;
+  }
+}
+@media only screen and (min-width: 576px) {
+  #main .texts h1 {
+    font-size: 90px;
+    line-height: 90px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #main .texts h1 {
+    font-size: 125px;
+    line-height: 108px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #main .texts h1:first-child {
+    margin-top: initial;
+  }
+}
+#main .texts h4 {
+  font-size: 2.5em;
+  line-height: 40px;
+}
+@media only screen and (min-width: 400px) {
+  #main .texts h4 {
+    font-size: 45px;
+    line-height: 45px;
+  }
+}
+@media only screen and (min-width: 576px) {
+  #main .texts h4 {
+    font-size: 55px;
+    line-height: 55px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #main .texts h4 {
+    font-size: 70px;
+    line-height: 70px;
+  }
+}
+#main .texts .btn {
+  display: inline-block;
+  margin-top: 75px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#header {
+  grid-area: header;
+}
+
+#who_we {
+  grid-area: who_we;
+}
+
+#what_do {
+  grid-area: what_do;
+}
+
+#how_works {
+  grid-area: how_works;
+}
+
+#team {
+  grid-area: team;
+}
+
+#client_say {
+  grid-area: client_say;
+}
+
+#in_touch {
+  grid-area: in_touch;
+}
+
+body {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: minmax(250px, auto);
+  grid-template-areas: "header header" "who_we who_we" "what_do what_do" "how_works how_works" "team team" "client_say client_say" "in_touch in_touch";
+}
+
+/*# sourceMappingURL=Style.css.map */
