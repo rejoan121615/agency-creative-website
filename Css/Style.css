@@ -46,6 +46,16 @@
   text-decoration: none;
 }
 
+#who_we #who-text .section_heading {
+  font-family: "PeaceSans";
+  font-size: 35px;
+  color: black;
+  text-align: center;
+}
+#who_we #who-text .section_heading::first-letter {
+  text-transform: uppercase;
+}
+
 #header {
   width: 100%;
   background-image: url("../Img/main-bg.png");
@@ -309,6 +319,34 @@
   margin-top: 75px;
 }
 
+#who_we {
+  background-image: url("../Img/bg-sec.png");
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 10px 1fr 10px;
+  grid-template-rows: 40px minmax(150px, 350px) minmax(200px, 300px) 40px;
+}
+@media only screen and (min-width: 992px) {
+  #who_we {
+    grid-template-columns: 8% repeat(4, 1fr) 8%;
+    grid-template-rows: 100px minmax(100px, 250px) 100px;
+  }
+}
+#who_we #who-img {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+#who_we #who-img img {
+  width: 100%;
+}
+#who_we #who-text {
+  grid-column: 2/3;
+  grid-row: 3/4;
+  padding-top: 55px;
+}
 * {
   margin: 0;
   padding: 0;

@@ -1,0 +1,34 @@
+#who_we {
+    background-image: url("../Img/bg-sec.png");
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    // grid
+    // @include grid()
+    display: grid;
+    grid-template-columns: 10px 1fr 10px;
+    grid-template-rows: 40px minmax(150px, 350px) minmax(200px, 300px) 40px;
+    @include resp ($lg) {
+        grid-template-columns: 8% repeat(4, 1fr) 8%;
+        grid-template-rows: 100px minmax(100px, 250px) 100px;
+    }
+    // image style 
+    #who-img {
+        grid-column: 2/3;
+        grid-row: 2/3;
+
+        img {
+            width: 100%;
+        }
+    }
+    #who-text {
+        grid-column: 2/3;
+        grid-row: 3/4;
+        padding-top: 55px;
+        // section  heading 
+        .section_heading {
+            @extend %section_heading;
+        }
+    }
+}
