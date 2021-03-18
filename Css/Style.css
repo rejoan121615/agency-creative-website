@@ -34,7 +34,35 @@
   font-family: "PumpDemi";
   src: url("../Fonts/Pump Demi Bold LET Plain.ttf");
 }
-#main .texts .btn {
+#header {
+  grid-area: header;
+}
+
+#who_we {
+  grid-area: who_we;
+}
+
+#what_do {
+  grid-area: what_do;
+}
+
+#how_works {
+  grid-area: how_works;
+}
+
+#team {
+  grid-area: team;
+}
+
+#client_say {
+  grid-area: client_say;
+}
+
+#in_touch {
+  grid-area: in_touch;
+}
+
+#who_we #who-text .primary_btn, #main .texts .btn {
   font-family: "LatoBold";
   font-size: 18px;
   text-transform: uppercase;
@@ -54,6 +82,13 @@
 }
 #who_we #who-text .section_heading::first-letter {
   text-transform: uppercase;
+}
+
+#who_we #who-text p {
+  font-family: "OpenSans";
+  font-size: 16px;
+  text-align: center;
+  color: #6a6a6a;
 }
 
 #header {
@@ -325,14 +360,14 @@
   background-repeat: no-repeat;
   background-size: 100%;
   width: 100%;
+  text-align: center;
   display: grid;
   grid-template-columns: 10px 1fr 10px;
-  grid-template-rows: 40px minmax(150px, 350px) minmax(200px, 300px) 40px;
+  grid-template-rows: 60px minmax(150px, 300px) minmax(200px, auto) 60px;
 }
 @media only screen and (min-width: 992px) {
   #who_we {
     grid-template-columns: 8% repeat(4, 1fr) 8%;
-    grid-template-rows: 100px minmax(100px, 250px) 100px;
   }
 }
 #who_we #who-img {
@@ -345,40 +380,28 @@
 #who_we #who-text {
   grid-column: 2/3;
   grid-row: 3/4;
-  padding-top: 55px;
+  text-align: center;
 }
+#who_we #who-text .section_heading {
+  color: #6a6a6a;
+}
+#who_we #who-text p {
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-top: 30px;
+}
+#who_we #who-text .primary_btn {
+  padding: 12px 25px;
+  display: inline-block;
+  background-color: black;
+  color: white;
+  margin-top: 50px;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-#header {
-  grid-area: header;
-}
-
-#who_we {
-  grid-area: who_we;
-}
-
-#what_do {
-  grid-area: what_do;
-}
-
-#how_works {
-  grid-area: how_works;
-}
-
-#team {
-  grid-area: team;
-}
-
-#client_say {
-  grid-area: client_say;
-}
-
-#in_touch {
-  grid-area: in_touch;
 }
 
 body {

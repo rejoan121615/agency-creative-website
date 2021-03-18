@@ -4,31 +4,46 @@
     background-repeat: no-repeat;
     background-size: 100%;
     width: 100%;
+    text-align: center;
     // grid
     // @include grid()
     display: grid;
     grid-template-columns: 10px 1fr 10px;
-    grid-template-rows: 40px minmax(150px, 350px) minmax(200px, 300px) 40px;
-    @include resp ($lg) {
+    grid-template-rows: 60px minmax(150px, 300px) minmax(200px, auto) 60px;
+    @include resp($lg) {
         grid-template-columns: 8% repeat(4, 1fr) 8%;
-        grid-template-rows: 100px minmax(100px, 250px) 100px;
+        // grid-template-rows: 100px minmax(100px, 250px) 100px;
     }
-    // image style 
+    // image style
     #who-img {
         grid-column: 2/3;
         grid-row: 2/3;
 
         img {
             width: 100%;
+            // max-width: 350px;
         }
     }
     #who-text {
         grid-column: 2/3;
         grid-row: 3/4;
-        padding-top: 55px;
-        // section  heading 
+        // padding-top: 55px;
+        text-align: center;
+        // section  heading
         .section_heading {
             @extend %section_heading;
+            color: $paragraph;
+        }
+        p {
+            @extend %para;
+            padding-left: 8px;
+            padding-right: 8px;
+            margin-top: 30px;
+        }
+        .primary_btn {
+            @include primary_btn(black, white) {
+                margin-top: 50px;
+            }
         }
     }
 }

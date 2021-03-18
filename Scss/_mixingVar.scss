@@ -1,3 +1,30 @@
+// fonts variable
+$sec_head_f: "PeaceSans";
+$btn_f: "LatoBold";
+$lato_black: "LatoBlack";
+$nav: "LatoBold";
+$main_sec_f: "LemonMilk";
+$para: "OpenSans";
+$para_head_f: "OpenSansExtraBold";
+$para_head_f2: "OpenSansBold";
+
+// color variable
+$paragraph: #6a6a6a;
+
+$section_list: "header" "who_we" "what_do" "how_works" "team" "client_say"
+    "in_touch";
+
+@mixin area_name($name) {
+    grid-area: $name;
+}
+
+@each $i in $section_list {
+    ##{$i} {
+        // display: grid;
+        // grid-template-columns: 1fr 1fr;
+        grid-area: unquote($string: $i);
+    }
+}
 
 // screen variable
 $x_sm: "400px";
@@ -7,8 +34,7 @@ $lg: "992px";
 $xl: "1200px";
 $xxl: "1400px";
 
-
-// grid left right col gap 
+// grid left right col gap
 // $gxsm: 10px;
 // $gsm: 25px;
 // $glg: 50px;
@@ -64,7 +90,7 @@ $xxl: "1400px";
     $lg: 45px;
     $xl: 50px;
 
-    // style 
+    // style
     font-family: "PeaceSans";
     font-size: 35px;
     color: black;
@@ -72,4 +98,20 @@ $xxl: "1400px";
     &::first-letter {
         text-transform: uppercase;
     }
+}
+
+%para {
+    font-family: "OpenSans";
+    font-size: 16px;
+    text-align: center;
+    color: $paragraph;
+}
+
+@mixin primary_btn($bg, $color) {
+    @extend %btn;
+    padding: 12px 25px;
+    display: inline-block;
+    background-color: $bg;
+    color: $color;
+    @content;
 }

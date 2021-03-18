@@ -9,30 +9,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-// fonts variable
-$sec_head_f: "PeaceSans";
-$btn_f: "LatoBold";
-$lato_black: "LatoBlack";
-$nav: "LatoBold";
-$main_sec_f: "LemonMilk";
-$para: "OpenSans";
-$para_head_f: "OpenSansExtraBold";
-$para_head_f2: "OpenSansBold";
 
-$section_list: "header" "who_we" "what_do" "how_works" "team" "client_say"
-    "in_touch";
-
-@mixin area_name($name) {
-    grid-area: $name;
-}
-
-@each $i in $section_list {
-    ##{$i} {
-        // display: grid;
-        // grid-template-columns: 1fr 1fr;
-        grid-area: unquote($string: $i);
-    }
-}
 
 body {
     width: 100%;
