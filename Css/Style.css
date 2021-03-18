@@ -62,7 +62,7 @@
   grid-area: in_touch;
 }
 
-#who_we #who-text .primary_btn, #main .texts .btn {
+#who_we .container #who-text .primary_btn, #main .texts .btn {
   font-family: "LatoBold";
   font-size: 18px;
   text-transform: uppercase;
@@ -74,21 +74,67 @@
   text-decoration: none;
 }
 
-#who_we #who-text .section_heading {
+#who_we .container #who-text .section_heading {
   font-family: "PeaceSans";
   font-size: 35px;
   color: black;
   text-align: center;
 }
-#who_we #who-text .section_heading::first-letter {
+#who_we .container #who-text .section_heading::first-letter {
   text-transform: uppercase;
 }
 
-#who_we #who-text p {
+#who_we .container #who-text p {
   font-family: "OpenSans";
   font-size: 16px;
   text-align: center;
   color: #6a6a6a;
+}
+
+@media only screen and (min-width: 576px) {
+  #who_we .container #who-text .section_heading {
+    font-size: 52px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #who_we .container #who-text .section_heading {
+    font-size: 42px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #who_we .container #who-text .section_heading {
+    font-size: 55px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  #who_we .container #who-text .section_heading {
+    font-size: 65px;
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  #who_we .container #who-text p {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #who_we .container #who-text p {
+    font-size: 17px;
+    line-height: 25px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #who_we .container #who-text p {
+    font-size: 18px;
+    line-height: 27px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  #who_we .container #who-text p {
+    font-size: 20px;
+    line-height: 30px;
+  }
 }
 
 #header {
@@ -231,7 +277,7 @@
   padding-left: 15px;
   padding-right: 15px;
 }
-@media only screen and (min-width: 400px) {
+@media only screen and (min-width: 320px) {
   #main {
     grid-template-rows: 2fr 1.5fr;
   }
@@ -301,7 +347,7 @@
   font-size: 3.2em;
   line-height: 55px;
 }
-@media only screen and (min-width: 400px) {
+@media only screen and (min-width: 320px) {
   #main .texts h1 {
     font-size: 75px;
     line-height: 65px;
@@ -331,7 +377,7 @@
   font-size: 2.5em;
   line-height: 40px;
 }
-@media only screen and (min-width: 400px) {
+@media only screen and (min-width: 320px) {
   #main .texts h4 {
     font-size: 45px;
     line-height: 45px;
@@ -359,38 +405,92 @@
   background-position: right top;
   background-repeat: no-repeat;
   background-size: 100%;
+}
+@media only screen and (min-width: 992px) {
+  #who_we {
+    background-size: 72%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #who_we {
+    background-size: 65%;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  #who_we {
+    background-size: 60%;
+  }
+}
+
+#who_we .container {
   width: 100%;
   text-align: center;
   display: grid;
   grid-template-columns: 10px 1fr 10px;
-  grid-template-rows: 60px minmax(150px, 300px) minmax(200px, auto) 60px;
+  grid-template-rows: 100px minmax(150px, auto) minmax(200px, auto) 100px;
+  justify-items: center;
 }
 @media only screen and (min-width: 992px) {
-  #who_we {
+  #who_we .container {
+    justify-items: center;
+    background-size: 72%;
+    grid-template-columns: 8% repeat(2, 1fr) repeat(2, 1.5fr) 8%;
+    grid-template-rows: 100px repeat(5, 1fr) 100px;
+    grid-template-areas: ". . . . . ." ". text text image image ." ". text text image image ." ". text text image image ." ". text text image image ." ". text text image image ." ". . . . . .";
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #who_we .container {
     grid-template-columns: 8% repeat(4, 1fr) 8%;
   }
 }
-#who_we #who-img {
+@media only screen and (min-width: 1920px) {
+  #who_we .container {
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+}
+#who_we .container #who-img {
   grid-column: 2/3;
   grid-row: 2/3;
-}
-#who_we #who-img img {
   width: 100%;
 }
-#who_we #who-text {
+@media only screen and (min-width: 768px) {
+  #who_we .container #who-img {
+    max-width: 650px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #who_we .container #who-img {
+    grid-area: image;
+    max-width: initial;
+  }
+}
+#who_we .container #who-text {
   grid-column: 2/3;
   grid-row: 3/4;
+  margin-top: 45px;
   text-align: center;
 }
-#who_we #who-text .section_heading {
+@media only screen and (min-width: 992px) {
+  #who_we .container #who-text {
+    grid-area: text;
+    margin-top: 0px;
+  }
+}
+#who_we .container #who-text .section_heading {
   color: #6a6a6a;
 }
-#who_we #who-text p {
-  padding-left: 8px;
-  padding-right: 8px;
-  margin-top: 30px;
+#who_we .container #who-text p {
+  width: 85%;
+  margin: 30px auto 0px auto;
 }
-#who_we #who-text .primary_btn {
+@media only screen and (min-width: 992px) {
+  #who_we .container #who-text p {
+    text-align: left;
+  }
+}
+#who_we .container #who-text .primary_btn {
   padding: 12px 25px;
   display: inline-block;
   background-color: black;

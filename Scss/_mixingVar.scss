@@ -27,19 +27,15 @@ $section_list: "header" "who_we" "what_do" "how_works" "team" "client_say"
 }
 
 // screen variable
-$x_sm: "400px";
+$x_sm: "320px";
 $sm: "576px";
 $md: "768px";
 $lg: "992px";
 $xl: "1200px";
 $xxl: "1400px";
+$max_screen: '1920px';
 
-// grid left right col gap
-// $gxsm: 10px;
-// $gsm: 25px;
-// $glg: 50px;
-// $gxl: 100px;
-// $gxxl: 10%;
+
 
 @mixin auto_flex {
     display: flex;
@@ -115,3 +111,58 @@ $xxl: "1400px";
     color: $color;
     @content;
 }
+
+
+
+// common style 
+%heading_font {
+    // responsive fonts 
+    $sm_h_f: 52px;
+    $lg_h_f: 42px;
+    $xl_h_f: 55px;
+    $xxl_h_f: 65px;
+
+    @include resp($sm) {
+        font-size: $sm_h_f;
+    }
+    @include resp($lg) {
+        font-size: $lg_h_f;
+    }
+    @include resp($xl) {
+        font-size: $xl_h_f;
+    }
+    @include resp($xxl) {
+        font-size: $xxl_h_f;
+    }
+
+}
+
+
+// responsive fonts 
+%para_font {
+    // responsive fonts 
+    $sm_h_f: 16px;
+    $lg_h_f: 17px;
+    $xl_h_f: 18px;
+    $xxl_h_f: 20px;
+
+    @include resp($sm) {
+        font-size: $sm_h_f;
+        line-height: 22px;
+    }
+    @include resp($lg) {
+        font-size: $lg_h_f;
+        line-height: 25px;
+    }
+    @include resp($xl) {
+        font-size: $xl_h_f;
+        line-height: 27px;
+    }
+    @include resp($xxl) {
+        font-size: $xxl_h_f;
+        line-height: 30px;
+    }
+
+}
+
+

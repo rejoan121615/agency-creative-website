@@ -3,42 +3,81 @@
     background-position: right top;
     background-repeat: no-repeat;
     background-size: 100%;
+    @include resp($lg) {
+        background-size: 72%;
+    }
+    @include resp($xl) {
+        background-size: 65%;
+    }
+    @include resp($xxl) {
+        background-size: 60%;
+    }
+}
+
+#who_we .container {
     width: 100%;
     text-align: center;
-    // grid
-    // @include grid()
     display: grid;
     grid-template-columns: 10px 1fr 10px;
-    grid-template-rows: 60px minmax(150px, 300px) minmax(200px, auto) 60px;
+    grid-template-rows: 100px minmax(150px, auto) minmax(200px, auto) 100px;
+    justify-items: center;
     @include resp($lg) {
+        justify-items: center;
+        background-size: 72%;
+        grid-template-columns: 8% repeat(2, 1fr) repeat(2, 1.5fr) 8%;
+        grid-template-rows: 100px repeat(5, 1fr) 100px;
+        grid-template-areas:
+            ". . . . . ."
+            ". text text image image ."
+            ". text text image image ."
+            ". text text image image ."
+            ". text text image image ."
+            ". text text image image ."
+            ". . . . . .";
+    }
+    @include resp($xl) {
         grid-template-columns: 8% repeat(4, 1fr) 8%;
-        // grid-template-rows: 100px minmax(100px, 250px) 100px;
+    }
+    @include resp($max_screen) {
+        max-width: unquote($max_screen);
+        margin: 0 auto;
     }
     // image style
     #who-img {
         grid-column: 2/3;
         grid-row: 2/3;
-
-        img {
-            width: 100%;
-            // max-width: 350px;
+        width: 100%;
+        @include resp($md) {
+            max-width: 650px;
+        }
+        @include resp($lg) {
+            grid-area: image;
+            max-width: initial;
         }
     }
     #who-text {
         grid-column: 2/3;
         grid-row: 3/4;
-        // padding-top: 55px;
+        margin-top: 45px;
         text-align: center;
+        @include resp($lg) {
+            grid-area: text;
+            margin-top: 0px;
+        }
         // section  heading
         .section_heading {
             @extend %section_heading;
+            @extend %heading_font;
             color: $paragraph;
         }
         p {
             @extend %para;
-            padding-left: 8px;
-            padding-right: 8px;
-            margin-top: 30px;
+            @extend %para_font;
+            width: 85%;
+            margin: 30px auto 0px auto;
+            @include resp($lg) {
+                text-align: left;
+            }
         }
         .primary_btn {
             @include primary_btn(black, white) {
