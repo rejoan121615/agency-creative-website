@@ -1,0 +1,109 @@
+.title {
+    font-family: $para_head_f;
+    font-size: 23px;
+    color: #6f6f6e;
+    text-transform: capitalize;
+}
+
+#what_do {
+    background-color: $bg_not_white;
+    .container {
+        @extend %container;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "title"
+            "texts";
+        @include resp($lg) {
+            padding-top: 110px;
+            padding-bottom: 110px;
+        }
+        .section_heading {
+            grid-area: title;
+            @extend %heading_font;
+        }
+        // section container
+        @at-root .section-container {
+            grid-area: texts;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-row-gap: 40px;
+            margin-top: 65px;
+
+            @include resp($lg) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            // extra extra large screen 1400px 
+            @include resp ($xxl) {
+                grid-template-columns: repeat(3, 1fr);
+                grid-column-gap: 4%;
+            } 
+        }
+
+        li {
+            text-align: center;
+            list-style: none;
+            @include resp($xl) {
+                display: grid;
+                grid-template-columns: 85px 1fr;
+                grid-template-rows: 85px auto;
+                grid-template-areas:
+                    "icon title"
+                    ". paragraph";
+                grid-column-gap: 15px;
+            }
+            .icon_container {
+                width: 75px;
+                height: 75px;
+                border-radius: 50%;
+                background-color: $common_red;
+                padding: 10px;
+                // text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                @include center;
+                img {
+                    display: inline-block;
+                    width: 55%;
+                }
+                @include resp ($xl) {
+                    grid-area: icon;
+                }
+            }
+
+            h1 {
+                font-family: "OpenSansExtraBold";
+                font-size: 35px;
+                text-transform: capitalize;
+                color: $title_slow;
+                @include resp($lg) {
+                    margin-top: 25px;
+                }
+                @include resp ($xl) {
+                    grid-area: title;
+                    margin-top: 0px;
+                    align-self: center;
+                    text-align: left;
+                }
+            }
+            p {
+                @extend %para_font;
+                margin-top: 20px;
+                width: 80%;
+                @include center;
+                @include resp ($xl) {
+                    grid-area: paragraph;
+                    width: 80%;
+                    margin: 0px;
+                    text-align: justify;
+                }
+                @include resp ($xxl) {
+                    width: 100%;
+                }
+
+            }
+        }
+    }
+}
