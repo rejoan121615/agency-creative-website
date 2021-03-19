@@ -74,13 +74,13 @@
   text-decoration: none;
 }
 
-#who_we .container #who-text .section_heading {
+#who_we .container #who-text .section_heading, #what_do .container .section_heading {
   font-family: "PeaceSans";
   font-size: 35px;
   color: black;
   text-align: center;
 }
-#who_we .container #who-text .section_heading::first-letter {
+#who_we .container #who-text .section_heading::first-letter, #what_do .container .section_heading::first-letter {
   text-transform: uppercase;
 }
 
@@ -91,49 +91,82 @@
   color: #6a6a6a;
 }
 
+#what_do .container .section_heading, #who_we .container #who-text .section_heading {
+  color: #494949;
+}
 @media only screen and (min-width: 576px) {
-  #who_we .container #who-text .section_heading {
+  #what_do .container .section_heading, #who_we .container #who-text .section_heading {
     font-size: 52px;
   }
 }
 @media only screen and (min-width: 992px) {
-  #who_we .container #who-text .section_heading {
-    font-size: 42px;
+  #what_do .container .section_heading, #who_we .container #who-text .section_heading {
+    font-size: 53px;
   }
 }
 @media only screen and (min-width: 1200px) {
-  #who_we .container #who-text .section_heading {
+  #what_do .container .section_heading, #who_we .container #who-text .section_heading {
     font-size: 55px;
   }
 }
 @media only screen and (min-width: 1400px) {
-  #who_we .container #who-text .section_heading {
+  #what_do .container .section_heading, #who_we .container #who-text .section_heading {
     font-size: 65px;
   }
 }
 
+#what_do .container li p, #who_we .container #who-text p {
+  font-family: "OpenSans";
+  color: #6a6a6a;
+}
 @media only screen and (min-width: 576px) {
-  #who_we .container #who-text p {
+  #what_do .container li p, #who_we .container #who-text p {
     font-size: 16px;
     line-height: 22px;
   }
 }
 @media only screen and (min-width: 992px) {
-  #who_we .container #who-text p {
+  #what_do .container li p, #who_we .container #who-text p {
     font-size: 17px;
     line-height: 25px;
   }
 }
 @media only screen and (min-width: 1200px) {
-  #who_we .container #who-text p {
+  #what_do .container li p, #who_we .container #who-text p {
     font-size: 18px;
     line-height: 27px;
   }
 }
 @media only screen and (min-width: 1400px) {
-  #who_we .container #who-text p {
+  #what_do .container li p, #who_we .container #who-text p {
     font-size: 20px;
     line-height: 30px;
+  }
+}
+
+#what_do .container {
+  width: 100%;
+  padding: 65px 10px 65px 10px;
+}
+@media only screen and (min-width: 576px) {
+  #what_do .container {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #what_do .container {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  #what_do .container {
+    padding-top: 120px;
+    padding-bottom: 120px;
+    width: 85%;
+    max-width: 1920px;
   }
 }
 
@@ -496,6 +529,123 @@
   background-color: black;
   color: white;
   margin-top: 50px;
+}
+
+.title {
+  font-family: "OpenSansExtraBold";
+  font-size: 23px;
+  color: #6f6f6e;
+  text-transform: capitalize;
+}
+
+#what_do {
+  background-color: #f5f5f5;
+}
+#what_do .container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "title" "texts";
+}
+@media only screen and (min-width: 992px) {
+  #what_do .container {
+    padding-top: 110px;
+    padding-bottom: 110px;
+  }
+}
+#what_do .container .section_heading {
+  grid-area: title;
+}
+.section-container {
+  grid-area: texts;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 40px;
+  margin-top: 65px;
+}
+@media only screen and (min-width: 992px) {
+  .section-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .section-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+#what_do .container li {
+  text-align: center;
+  list-style: none;
+}
+@media only screen and (min-width: 1200px) {
+  #what_do .container li {
+    display: grid;
+    grid-template-columns: 85px 1fr;
+    grid-template-rows: 85px auto;
+    grid-template-areas: "icon title" ". paragraph";
+    grid-column-gap: 15px;
+  }
+}
+#what_do .container li .icon_container {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  background-color: #bc2e3a;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+#what_do .container li .icon_container img {
+  display: inline-block;
+  width: 55%;
+}
+@media only screen and (min-width: 1200px) {
+  #what_do .container li .icon_container {
+    grid-area: icon;
+  }
+}
+#what_do .container li h1 {
+  font-family: "OpenSansExtraBold";
+  font-size: 35px;
+  text-transform: capitalize;
+  color: #6f6f6e;
+}
+@media only screen and (min-width: 992px) {
+  #what_do .container li h1 {
+    margin-top: 25px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #what_do .container li h1 {
+    grid-area: title;
+    margin-top: 0px;
+    align-self: center;
+    text-align: left;
+  }
+}
+#what_do .container li p {
+  margin-top: 20px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media only screen and (min-width: 1200px) {
+  #what_do .container li p {
+    grid-area: paragraph;
+    width: 80%;
+    margin: 0px;
+    text-align: left;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  #what_do .container li p {
+    width: 100%;
+    padding-right: 10px;
+  }
 }
 
 * {
