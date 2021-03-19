@@ -34,10 +34,11 @@
             @include resp($lg) {
                 grid-template-columns: repeat(2, 1fr);
             }
-            // extra extra large screen 1400px 
-            @include resp ($xxl) {
+            // extra extra large screen 1400px
+            @include resp($xxl) {
                 grid-template-columns: repeat(3, 1fr);
-            } 
+                grid-column-gap: 4%;
+            }
         }
 
         li {
@@ -67,7 +68,7 @@
                     display: inline-block;
                     width: 55%;
                 }
-                @include resp ($xl) {
+                @include resp($xl) {
                     grid-area: icon;
                 }
             }
@@ -80,7 +81,7 @@
                 @include resp($lg) {
                     margin-top: 25px;
                 }
-                @include resp ($xl) {
+                @include resp($xl) {
                     grid-area: title;
                     margin-top: 0px;
                     align-self: center;
@@ -92,17 +93,15 @@
                 margin-top: 20px;
                 width: 80%;
                 @include center;
-                @include resp ($xl) {
+                @include resp($xl) {
                     grid-area: paragraph;
                     width: 80%;
                     margin: 0px;
-                    text-align: left;
+                    text-align: justify;
                 }
-                @include resp ($xxl) {
+                @include resp($xxl) {
                     width: 100%;
-                    padding-right: 10px;
                 }
-
             }
         }
     }
