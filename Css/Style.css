@@ -540,6 +540,10 @@
 
 #what_do {
   background-color: #f5f5f5;
+  background-image: url("../Img/bg-red-sec.png");
+  background-repeat: no-repeat;
+  background-size: 100px auto;
+  background-position: left center;
 }
 #what_do .container {
   display: grid;
@@ -551,6 +555,12 @@
   #what_do .container {
     padding-top: 110px;
     padding-bottom: 110px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  #what_do .container {
+    padding-top: 140px;
+    padding-bottom: 150px;
   }
 }
 #what_do .container .section_heading {
