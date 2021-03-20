@@ -4,6 +4,7 @@
 @import "header";
 @import "whoWe";
 @import 'whatWeDo';
+@import 'howItWorks';
 
 * {
     margin: 0;
@@ -20,4 +21,20 @@ body {
     grid-template-areas: "header header" "who_we who_we" "what_do what_do" "how_works how_works" "team team" "client_say client_say" "in_touch in_touch";
 
     // header style
+}
+
+.container {
+    @extend %container;
+}
+
+.section_heading {
+    @extend %heading_font;
+}
+
+p , .para{
+    @extend %para_font;
+}
+.btn {
+    @extend %btn;
+    display: inline-block;
 }
