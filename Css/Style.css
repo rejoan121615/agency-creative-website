@@ -72,6 +72,10 @@
   border-radius: 40px;
   background-color: #bc2e3a;
   text-decoration: none;
+  width: 200px;
+  display: block !important;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #who_we .container #who-text .section_heading, .section_heading, #what_do .container .section_heading {
@@ -93,6 +97,7 @@
 
 .section_heading, #what_do .container .section_heading, #who_we .container #who-text .section_heading {
   color: #494949;
+  font-size: 45px;
 }
 @media only screen and (min-width: 576px) {
   .section_heading, #what_do .container .section_heading, #who_we .container #who-text .section_heading {
@@ -670,9 +675,105 @@ p, .para, #what_do .container li p, #who_we .container #who-text p {
 
 #how_works .container {
   display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto minmax(100px, auto);
+  grid-template-areas: "title" "text" "options";
 }
-#how_works .container .idea_design {
-  display: none;
+@media only screen and (min-width: 992px) {
+  #how_works .container {
+    grid-template-columns: 1fr;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #how_works .container {
+    grid-template-columns: 1fr 1fr 3fr;
+    grid-template-areas: "title title ." "text text options" "text text options";
+  }
+}
+#how_works .container .section_heading {
+  grid-area: title;
+}
+#how_works .container .how-left {
+  grid-area: text;
+}
+#how_works .container .btn {
+  margin-top: 25px;
+}
+#how_works .container #how_options {
+  grid-area: options;
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media only screen and (min-width: 992px) {
+  #how_works .container #how_options {
+    flex-direction: row;
+  }
+}
+#how_works .container #how_options .option {
+  margin-top: 45px;
+  width: 100%;
+  max-width: 420px;
+  height: 260px;
+}
+@media only screen and (min-width: 1200px) {
+  #how_works .container #how_options .option {
+    flex-direction: row;
+    flex-basis: 32%;
+    max-width: initial;
+  }
+}
+#how_works .container #how_options .option .inside_option {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 350px;
+  font-family: "LatoBold";
+  font-size: 25px;
+  color: white;
+  text-transform: uppercase;
+  margin-top: 35px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+#how_works .container #how_options .option .inside_option:first-child {
+  margin-top: 0px;
+}
+#how_works .container #how_options .option .inside_option h1 {
+  text-align: right;
+}
+#how_works .container #how_options .option .inside_option h2 {
+  text-align: left;
+  font-size: 22px;
+  margin-top: 45px;
+}
+#how_works .container #how_options .option .inside_option .para {
+  text-align: left;
+  color: white;
+  text-transform: initial;
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+#how_works .container #how_options .option-1 {
+  background-image: url("../Img/option-1.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center center;
+}
+#how_works .container #how_options .option-2 {
+  background-image: url("../Img/option-2.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center center;
+}
+#how_works .container #how_options .option-3 {
+  background-image: url("../Img/option-3.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center center;
 }
 
 * {

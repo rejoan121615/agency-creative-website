@@ -83,6 +83,9 @@ $max_screen: '1920px';
     border-radius: 40px;
     background-color: $common_red;
     text-decoration: none;
+    width: 200px;
+    display: block!important;
+    @include center;
 }
 
 %section_heading {
@@ -123,6 +126,7 @@ $max_screen: '1920px';
     $lg_h_f: 53px;
     $xl_h_f: 55px;
     $xxl_h_f: 65px;
+    font-size: 45px;
 
     @include resp($sm) {
         font-size: $sm_h_f;
@@ -201,4 +205,15 @@ $max_screen: '1920px';
     }
 
     // @include resp()
+}
+
+// background 
+@mixin background($num, $size) {
+    .option-#{$num} {
+        background-image: url('../Img/option-#{$num}.png');
+        background-repeat: no-repeat;
+        background-size: $size;
+        background-position: center center;
+        @content;
+    }
 }
