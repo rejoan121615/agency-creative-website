@@ -72,6 +72,10 @@
   border-radius: 40px;
   background-color: #bc2e3a;
   text-decoration: none;
+  width: 200px;
+  display: block !important;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #who_we .container #who-text .section_heading, .section_heading, #what_do .container .section_heading {
@@ -93,6 +97,7 @@
 
 .section_heading, #what_do .container .section_heading, #who_we .container #who-text .section_heading {
   color: #494949;
+  font-size: 45px;
 }
 @media only screen and (min-width: 576px) {
   .section_heading, #what_do .container .section_heading, #who_we .container #who-text .section_heading {
@@ -668,11 +673,141 @@ p, .para, #what_do .container li p, #who_we .container #who-text p {
   }
 }
 
-#how_works .container {
-  display: grid;
+#how_works {
+  position: relative;
 }
-#how_works .container .idea_design {
-  display: none;
+#how_works .bg_style {
+  width: 400px;
+  position: absolute;
+  right: 0px;
+  top: 130px;
+}
+@media only screen and (min-width: 768px) {
+  #how_works .bg_style {
+    top: 200px;
+    width: 45%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #how_works .bg_style {
+    top: -130px;
+    width: 40%;
+    width: 600px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  #how_works .bg_style {
+    width: 700px;
+    top: -280px;
+  }
+}
+#how_works .container {
+  position: relative;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto minmax(100px, auto);
+  grid-template-areas: "title" "text" "options";
+}
+@media only screen and (min-width: 1400px) {
+  #how_works .container {
+    grid-template-columns: 2fr 2fr 3fr;
+    grid-template-rows: 100px auto;
+    grid-template-areas: "title title title" "text options options";
+    grid-row-gap: 20px;
+  }
+}
+#how_works .container .section_heading {
+  grid-area: title;
+}
+@media only screen and (min-width: 1400px) {
+  #how_works .container .section_heading {
+    text-align: left;
+  }
+}
+#how_works .container .how-left {
+  grid-area: text;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media only screen and (min-width: 1400px) {
+  #how_works .container .how-left {
+    width: 100%;
+    align-self: center;
+  }
+  #how_works .container .how-left p {
+    text-align: left;
+    width: 90%;
+  }
+}
+#how_works .container .btn {
+  margin-top: 25px;
+}
+#how_works .container #how_options {
+  grid-area: options;
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media only screen and (min-width: 1200px) {
+  #how_works .container #how_options {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+#how_works .container #how_options .option {
+  margin-top: 45px;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 20px;
+  background: #22c1c3;
+  background: radial-gradient(circle, #22c1c3 0%, #e92dfd 100%);
+}
+@media only screen and (min-width: 1200px) {
+  #how_works .container #how_options .option {
+    flex-basis: 31.5%;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  #how_works .container #how_options .option {
+    flex-direction: row;
+    flex-basis: 30%;
+    max-width: initial;
+    margin-top: 0px;
+  }
+}
+#how_works .container #how_options .option .inside_option {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 25px;
+  width: 100%;
+  max-width: 350px;
+  font-family: "LatoBold";
+  font-size: 25px;
+  color: white;
+  text-transform: uppercase;
+}
+#how_works .container #how_options .option .inside_option:first-child {
+  margin-top: 0px;
+}
+#how_works .container #how_options .option .inside_option h1 {
+  text-align: right;
+}
+#how_works .container #how_options .option .inside_option h2 {
+  text-align: left;
+  font-size: 22px;
+  margin-top: 45px;
+}
+#how_works .container #how_options .option .inside_option .para {
+  text-align: left;
+  color: white;
+  text-transform: initial;
+  margin-top: 10px;
+  margin-bottom: 25px;
 }
 
 * {

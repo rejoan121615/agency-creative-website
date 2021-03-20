@@ -1,10 +1,140 @@
 #how_works {
+    // background: url('../Img/bg-red-right.png') no-repeat right center;
+    position: relative;
+    .bg_style {
+        width: 400px;
+        position: absolute;
+        right: 0px;
+        top:   130px;
+        @include resp ($md) {
+            top: 200px;
+            width: 45%;
+        }
+        @include resp ($lg) {
+            top: -130px;
+            width: 40%;
+            width: 600px;
+        }
+        @include resp ($xl) {
+            // width:  
+        }
+        @include resp ($xxl) {
+            width: 700px;
+            top: -280px;
+        }
+
+    }
     .container {
         @extend %container;
+        position: relative;
+        z-index: 10;
         display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr auto minmax(100px, auto);
+        grid-template-areas:
+            "title"
+            "text"
+            "options";
+        // responsive
+        @include resp($xxl) {
+            grid-template-columns: 2fr 2fr 3fr;
+            grid-template-rows: 100px auto;
+            grid-template-areas:
+                "title title title"
+                "text options options";
+            grid-row-gap: 20px;
+        }
 
-        .idea_design {
-            display: none;
+        .section_heading {
+            grid-area: title;
+            @include resp($xxl) {
+                text-align: left;
+            }
+        }
+        .how-left {
+            grid-area: text;
+            width: 80%;
+            @include center;
+            p {
+            }
+            @include resp($xxl) {
+                width: 100%;
+                align-self: center;
+                p {
+                    text-align: left;
+                    width: 90%;
+                }
+            }
+        }
+
+        .btn {
+            margin-top: 25px;
+        }
+        // how it works options
+        #how_options {
+            grid-area: options;
+            display: flex;
+            flex-flow: column wrap;
+            align-content: center;
+            width: 100%;
+            @include center;
+
+            // responsive design
+            @include resp ($xl) {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            // options
+            .option {
+                margin-top: 45px;
+                width: 100%;
+                max-width: 420px;
+                border-radius: 20px;
+                background: rgb(34, 193, 195);
+                background: radial-gradient(
+                    circle,
+                    rgba(34, 193, 195, 1) 0%,
+                    rgba(233, 45, 253, 1) 100%
+                );
+                @include resp ($xl) {
+                    flex-basis: 31.5%;
+                }
+                @include resp($xxl) {
+                    flex-direction: row;
+                    flex-basis: 30%;
+                    max-width: initial;
+                    margin-top: 0px;
+                }
+
+                .inside_option {
+                    @include center;
+                    padding: 25px;
+                    width: 100%;
+                    max-width: 350px;
+                    font-family: "LatoBold";
+                    font-size: 25px;
+                    color: white;
+                    text-transform: uppercase;
+                    &:first-child {
+                        margin-top: 0px;
+                    }
+                    h1 {
+                        text-align: right;
+                    }
+                    h2 {
+                        text-align: left;
+                        font-size: 22px;
+                        margin-top: 45px;
+                    }
+                    .para {
+                        text-align: left;
+                        color: white;
+                        text-transform: initial;
+                        margin-top: 10px;
+                        margin-bottom: 25px;
+                    }
+                }
+            }
         }
     }
 }
