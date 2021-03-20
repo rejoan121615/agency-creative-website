@@ -1,0 +1,55 @@
+#team {
+    background-color: $bg_not_white;
+
+    .container {
+        width: 100%;
+        max-width: 2000px;
+    }
+
+    @at-root #slider_wrapper {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        grid-template-rows: 450px;
+        grid-template-areas: "btn1 slider btn2";
+        grid-column-gap: 20px;
+        .sl_btn {
+            font-size: 320px;
+            align-self: center;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+        }
+        .left_btn {
+            grid-area: btn1;
+        }
+        .right_btn {
+            grid-area: btn2;
+        }
+
+        .slider_container {
+            width: 100%;
+            overflow:  hidden;
+// ---------------------------------------------------------------------
+            // child container 
+// ---------------------------------------------------------------------
+            .child_container {
+                width: 2500px;
+// -----------------------------------------------------------------------
+                // child list 
+// ------------------------------------------------------------------------
+                .sli_child {
+                    width: 500px;
+                    height: 500px;
+                    float: left;
+                    .chi_wrap {
+                        width: 500px;
+                        img {
+                            width: 500px;
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+}

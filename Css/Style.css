@@ -810,6 +810,52 @@ p, .para, #what_do .container li p, #who_we .container #who-text p {
   margin-bottom: 25px;
 }
 
+#team {
+  background-color: #f5f5f5;
+}
+#team .container {
+  width: 100%;
+  max-width: 2000px;
+}
+#slider_wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: 450px;
+  grid-template-areas: "btn1 slider btn2";
+  grid-column-gap: 20px;
+}
+#slider_wrapper .sl_btn {
+  font-size: 320px;
+  align-self: center;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+#slider_wrapper .left_btn {
+  grid-area: btn1;
+}
+#slider_wrapper .right_btn {
+  grid-area: btn2;
+}
+#slider_wrapper .slider_container {
+  width: 100%;
+  overflow: hidden;
+}
+#slider_wrapper .slider_container .child_container {
+  width: 2500px;
+}
+#slider_wrapper .slider_container .child_container .sli_child {
+  width: 500px;
+  height: 500px;
+  float: left;
+}
+#slider_wrapper .slider_container .child_container .sli_child .chi_wrap {
+  width: 500px;
+}
+#slider_wrapper .slider_container .child_container .sli_child .chi_wrap img {
+  width: 500px;
+}
+
 * {
   margin: 0;
   padding: 0;
