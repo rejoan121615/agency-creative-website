@@ -1,0 +1,10 @@
+#how_works {
+    .container {
+        @extend %container;
+        display: grid;
+
+        .idea_design {
+            display: none;
+        }
+    }
+}
