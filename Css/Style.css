@@ -839,21 +839,15 @@ p, .para, #what_do .container li p, #who_we .container #who-text p {
 }
 #slider_wrapper .slider_container {
   width: 100%;
-  overflow: hidden;
 }
 #slider_wrapper .slider_container .child_container {
-  width: 2500px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
 }
-#slider_wrapper .slider_container .child_container .sli_child {
-  width: 500px;
-  height: 500px;
-  float: left;
-}
-#slider_wrapper .slider_container .child_container .sli_child .chi_wrap {
-  width: 500px;
-}
-#slider_wrapper .slider_container .child_container .sli_child .chi_wrap img {
-  width: 500px;
+#slider_wrapper .slider_container .child_container .sli_child .slider_img {
+  width: 100%;
 }
 
 * {
