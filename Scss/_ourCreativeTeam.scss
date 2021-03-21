@@ -9,7 +9,7 @@
     @at-root #slider_wrapper {
         display: grid;
         grid-template-columns: auto 1fr auto;
-        grid-template-rows: 450px;
+        grid-template-rows: minmax(350px, 700px);
         grid-template-areas: "btn1 slider btn2";
         grid-column-gap: 20px;
         .sl_btn {
@@ -33,9 +33,11 @@
             // ---------------------------------------------------------------------
             .child_container {
                 width: 100%;
+                height: 100%;
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr;
                 grid-template-rows: auto;
+                align-items: center;
                 // -----------------------------------------------------------------------
                 // child list
                 // ------------------------------------------------------------------------

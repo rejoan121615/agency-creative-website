@@ -820,7 +820,7 @@ p, .para, #what_do .container li p, #who_we .container #who-text p {
 #slider_wrapper {
   display: grid;
   grid-template-columns: auto 1fr auto;
-  grid-template-rows: 450px;
+  grid-template-rows: minmax(350px, 700px);
   grid-template-areas: "btn1 slider btn2";
   grid-column-gap: 20px;
 }
@@ -842,9 +842,11 @@ p, .para, #what_do .container li p, #who_we .container #who-text p {
 }
 #slider_wrapper .slider_container .child_container {
   width: 100%;
+  height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
+  align-items: center;
 }
 #slider_wrapper .slider_container .child_container .sli_child .slider_img {
   width: 100%;
