@@ -816,6 +816,8 @@ p, .para, #what_do .container li p, #who_we .container #who-text p {
 #team .container {
   width: 100%;
   max-width: 2000px;
+  padding-top: 150px;
+  padding-bottom: 150px;
 }
 #slider_wrapper {
   display: grid;
@@ -858,11 +860,25 @@ p, .para, #what_do .container li p, #who_we .container #who-text p {
 }
 #slider_wrapper .slider_container {
   width: 100%;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media only screen and (min-width: 576px) {
+  #slider_wrapper .slider_container {
+    max-width: 500px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #slider_wrapper .slider_container {
+    max-width: initial;
+  }
 }
 #slider_wrapper .slider_container .child_container {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 33%);
+  grid-template-columns: 1fr;
+  grid-row-gap: 55px;
   grid-template-rows: auto;
   align-items: center;
   justify-content: space-between;
@@ -887,20 +903,30 @@ p, .para, #what_do .container li p, #who_we .container #who-text p {
   display: inline-block;
 }
 #slider_wrapper .slider_container .child_container .sli_child .name {
-  width: 50%;
-  transform: skewX(-45deg);
+  width: 100%;
   background-color: #252525;
   padding-top: 20px;
   padding-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
 }
+@media only screen and (min-width: 992px) {
+  #slider_wrapper .slider_container .child_container .sli_child .name {
+    width: 50%;
+    transform: skewX(-45deg);
+  }
+}
 #slider_wrapper .slider_container .child_container .sli_child .name h1 {
   font-family: "OpenSansBold";
-  font-size: 25px;
+  font-size: 20px;
   color: white;
-  transform: skewX(45deg);
   text-align: center;
+}
+@media only screen and (min-width: 992px) {
+  #slider_wrapper .slider_container .child_container .sli_child .name h1 {
+    transform: skewX(45deg);
+    font-size: 25px;
+  }
 }
 #slider_wrapper .slider_container .child_container .sli_child .title {
   width: 35%;
