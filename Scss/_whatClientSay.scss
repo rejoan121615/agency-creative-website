@@ -1,15 +1,25 @@
 #client_say {
     .container {
+        .section_heading {
+            width: 100%;
+            @include resp ($xxl) {
+                text-align: left;
+                margin-left: 280px;
+            }
+        }
         @at-root #client_container {
             display: grid;
             grid-template-columns: 1fr;
-            grid-template-rows: 500px minmax(250px, 450px);
+            grid-template-rows: auto minmax(250px, auto);
             grid-template-areas:
                 "img"
                 "comment";
             justify-items: center;
             margin-top: 75px;
             // responsive
+            @include resp ($sm) {
+                grid-template-rows: 500px minmax(250px, 450px);
+            }
             @include resp($lg) {
                 grid-template-rows: 500px 250px;
             }
@@ -20,9 +30,20 @@
                     "img comment"
                     "img comment";
             }
+            @include resp ($xxl) {
+                align-items: center;
+                margin-top: 35px;
+            }
             // image style
             .client_img {
                 grid-area: img;
+                width: 100%;
+                @include resp ($sm) {
+                    width: initial;
+                }
+                @include resp ($xl) {
+                    width: 100%;
+                }
             }
             .client_comment {
                 grid-area: comment;
@@ -55,6 +76,8 @@
                     text-align: justify;
                     color: #6a6a6a;
                     font-style: italic;
+                    padding-left: 20px;
+                    padding-right: 20px;
                     // responsive
                     @include resp($lg) {
                         grid-area: text;

@@ -936,13 +936,27 @@ p,
   transform: skewX(45deg);
 }
 
+#client_say .container .section_heading {
+  width: 100%;
+}
+@media only screen and (min-width: 1400px) {
+  #client_say .container .section_heading {
+    text-align: left;
+    margin-left: 280px;
+  }
+}
 #client_container {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 500px minmax(250px, 450px);
+  grid-template-rows: auto minmax(250px, auto);
   grid-template-areas: "img" "comment";
   justify-items: center;
   margin-top: 75px;
+}
+@media only screen and (min-width: 576px) {
+  #client_container {
+    grid-template-rows: 500px minmax(250px, 450px);
+  }
 }
 @media only screen and (min-width: 992px) {
   #client_container {
@@ -956,8 +970,25 @@ p,
     grid-template-areas: "img comment" "img comment";
   }
 }
+@media only screen and (min-width: 1400px) {
+  #client_container {
+    align-items: center;
+    margin-top: 35px;
+  }
+}
 #client_container .client_img {
   grid-area: img;
+  width: 100%;
+}
+@media only screen and (min-width: 576px) {
+  #client_container .client_img {
+    width: initial;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #client_container .client_img {
+    width: 100%;
+  }
 }
 #client_container .client_comment {
   grid-area: comment;
@@ -991,6 +1022,8 @@ p,
   text-align: justify;
   color: #6a6a6a;
   font-style: italic;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 @media only screen and (min-width: 992px) {
   #client_container .client_comment .para {
