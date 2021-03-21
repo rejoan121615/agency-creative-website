@@ -3,16 +3,16 @@
 @import "mixingVar";
 @import "header";
 @import "whoWe";
-@import 'whatWeDo';
-@import 'howItWorks';
-@import 'ourCreativeTeam';
+@import "whatWeDo";
+@import "howItWorks";
+@import "ourCreativeTeam";
+@import "whatClientSay";
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 
 body {
     width: 100%;
@@ -31,7 +31,8 @@ body {
     @extend %heading_font;
 }
 
-p , .para{
+p,
+.para {
     @extend %para_font;
 }
 .btn {

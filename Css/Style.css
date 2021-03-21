@@ -88,7 +88,8 @@
   text-transform: uppercase;
 }
 
-#who_we .container #who-text p, p, .para, #what_do .container li p, #who_we .container #who-text p {
+#who_we .container #who-text p, p,
+.para, #what_do .container li p, #who_we .container #who-text p {
   font-family: "OpenSans";
   font-size: 16px;
   text-align: center;
@@ -120,30 +121,35 @@
   }
 }
 
-p, .para, #what_do .container li p, #who_we .container #who-text p {
+p,
+.para, #what_do .container li p, #who_we .container #who-text p {
   font-family: "OpenSans";
   color: #6a6a6a;
 }
 @media only screen and (min-width: 576px) {
-  p, .para, #what_do .container li p, #who_we .container #who-text p {
+  p,
+.para, #what_do .container li p, #who_we .container #who-text p {
     font-size: 16px;
     line-height: 22px;
   }
 }
 @media only screen and (min-width: 992px) {
-  p, .para, #what_do .container li p, #who_we .container #who-text p {
+  p,
+.para, #what_do .container li p, #who_we .container #who-text p {
     font-size: 17px;
     line-height: 25px;
   }
 }
 @media only screen and (min-width: 1200px) {
-  p, .para, #what_do .container li p, #who_we .container #who-text p {
+  p,
+.para, #what_do .container li p, #who_we .container #who-text p {
     font-size: 18px;
     line-height: 27px;
   }
 }
 @media only screen and (min-width: 1400px) {
-  p, .para, #what_do .container li p, #who_we .container #who-text p {
+  p,
+.para, #what_do .container li p, #who_we .container #who-text p {
     font-size: 20px;
     line-height: 30px;
   }
@@ -928,6 +934,128 @@ p, .para, #what_do .container li p, #who_we .container #who-text p {
   color: white;
   text-align: center;
   transform: skewX(45deg);
+}
+
+#client_container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 500px minmax(250px, 450px);
+  grid-template-areas: "img" "comment";
+  justify-items: center;
+  margin-top: 75px;
+}
+@media only screen and (min-width: 992px) {
+  #client_container {
+    grid-template-rows: 500px 250px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #client_container {
+    grid-template-columns: 2.5fr 4fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "img comment" "img comment";
+  }
+}
+#client_container .client_img {
+  grid-area: img;
+}
+#client_container .client_comment {
+  grid-area: comment;
+  position: relative;
+}
+@media only screen and (min-width: 992px) {
+  #client_container .client_comment {
+    display: grid;
+    grid-template-columns: 1.5fr 1.5fr 2fr;
+    grid-template-rows: 45px 240px;
+    grid-template-areas: "title title title" "text text img";
+    align-items: center;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #client_container .client_comment {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto 50px 120px;
+    grid-template-areas: "text text text" "title title title" "img img img";
+  }
+}
+@media only screen and (min-width: 1400px) {
+  #client_container .client_comment {
+    grid-template-rows: 190px 50px 150px;
+  }
+}
+#client_container .client_comment .para {
+  font-family: OpenSans;
+  font-size: 25px;
+  line-height: 30px;
+  text-align: justify;
+  color: #6a6a6a;
+  font-style: italic;
+}
+@media only screen and (min-width: 992px) {
+  #client_container .client_comment .para {
+    grid-area: text;
+  }
+}
+#client_container .client_comment h4 {
+  font-family: OpenSansBold;
+  font-size: 30px;
+  text-align: center;
+  color: #6a6a6a;
+  text-transform: capitalize;
+  margin-top: 25px;
+}
+@media only screen and (min-width: 992px) {
+  #client_container .client_comment h4 {
+    grid-area: title;
+    margin-top: 0px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #client_container .client_comment h4 {
+    text-align: left;
+  }
+}
+#client_container .client_comment ul {
+  list-style: none;
+  overflow: hidden;
+  width: 230px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media only screen and (min-width: 992px) {
+  #client_container .client_comment ul {
+    grid-area: img;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  #client_container .client_comment ul {
+    width: 380px;
+    margin-top: 40px;
+    margin-left: 40px;
+  }
+}
+#client_container .client_comment ul li {
+  float: left;
+  width: 66.6666666667px;
+  margin-right: 10px;
+  margin-top: 25px;
+}
+#client_container .client_comment ul li:last-child {
+  margin-right: 0px;
+}
+@media only screen and (min-width: 992px) {
+  #client_container .client_comment ul li {
+    margin-top: 0px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  #client_container .client_comment ul li {
+    width: 116.6666666667px;
+  }
+  #client_container .client_comment ul li img {
+    width: 100%;
+  }
 }
 
 * {
