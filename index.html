@@ -7,10 +7,13 @@
     <title>Document</title>
     <link rel="stylesheet" href="./Css/Style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
-    <!-- responsive fonts  -->
+    <!-- slick slider   -->
+    <link rel="stylesheet" type="text/css" href="./Css/slick.css"/> -->
+    <link rel="stylesheet" type="text/css" href="./Css/slick-theme.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>		
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous"></script>
 
 </head>
 <body>
@@ -166,7 +169,7 @@
             <button class="sl_btn right_btn"><i class="fas fa-caret-right"></i></button>
             <!-- slider container  -->
             <div class="slider_container">
-                <div class="child_container">
+                <div class="child_container slick_slider">
                     <!-- child list  -->
                     <div class="sli_child">
                         <img class="slider_img" src="./Img/slider-image/person-1.png" alt="slider image">
@@ -267,6 +270,38 @@
         </ul>
         <!-- js  -->
         <script src="./Js/Scripts.js"></script>
+        <!-- slick slider files / codes  -->
+        <!-- <script src="./Js/SlickSliderSetting.js"></script> -->
+        <script>    
+        $(document).ready(function () {
+            console.log('your function is ready to run')
+        })
+            $(".child_container").slick({
+                centerMode: true,
+                centerPadding: "60px",
+                slidesToShow: 3,
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            arrows: false,
+                            centerMode: true,
+                            centerPadding: "40px",
+                            slidesToShow: 3,
+                        },
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            arrows: false,
+                            centerMode: true,
+                            centerPadding: "40px",
+                            slidesToShow: 1,
+                        },
+                    },
+                ],
+            });
+        </script>
     </footer>
 </body>
 </html>
