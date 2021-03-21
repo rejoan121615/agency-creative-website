@@ -217,3 +217,8 @@ $max_screen: '1920px';
         @content;
     }
 }
+
+@mixin padingX($number) {
+    padding-top: $number + px;
+    padding-bottom: $number + px;
+}
