@@ -222,3 +222,10 @@ $max_screen: '1920px';
     padding-top: $number + px;
     padding-bottom: $number + px;
 }
+
+@mixin footerFonts ($size) {
+    font-family: 'OpenSans';
+    font-size: $size;
+    color: white;
+    text-transform: capitalize;
+}

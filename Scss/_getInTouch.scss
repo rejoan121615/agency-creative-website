@@ -1,0 +1,80 @@
+#in_touch {
+    background: transparent url('../Img/footer_bg.png') no-repeat center center;
+    background-size: cover;
+    .container {
+        // contact section 
+        @at-root #contact {
+            margin-top: 45px;
+            display: flex;
+            flex-flow: column wrap;
+
+            
+            li {
+                flex-basis: 100%;
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr auto;
+                grid-template-areas: 
+                                    "icons"
+                                    "text";
+                justify-items: center;
+                grid-row-gap: 25px;
+                // margin on top 
+                margin-top: 30px;
+                &:first-child {
+                    margin-top: 0px;
+                }
+                
+                img {
+                    grid-area: icons;
+                    width: 128px;
+                }
+
+                .texts {
+                    grid-area: text;
+
+                    h6 {
+                        @include footerFonts(25px);
+                        font-weight: bold;
+                        text-align: center
+                    }
+                    p {
+                        @include footerFonts(20px);
+                        text-align: center;
+                    }
+                }
+            }
+        }
+        @at-root #social_media {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            width: 100%;
+            height: 230px;
+            // border-bottom: 2.5px solid red;
+            align-items: center;
+            // padding left and right 
+            padding-left: 15px;
+            padding-right: 15px;
+
+            // margin top 
+            margin-top: 45px;
+
+            a {
+                display: inline-block;
+                flex-basis: (100%/3);
+                text-align: center;
+                text-decoration: none;
+            
+                img {
+                    display: inline-block;
+                    width: 100%;
+                    max-width: 50px;
+                }
+            }
+
+
+            
+        }
+    }
+}
