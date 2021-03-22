@@ -7,6 +7,16 @@
             margin-top: 45px;
             display: flex;
             flex-flow: column wrap;
+            // ----------------------------------------------------
+            // responsive
+            // ---------------------------------------------------
+            @include resp($lg) {
+                flex-direction: row;
+                max-width: 875px;
+                justify-content: space-between;
+                @include center;
+                margin-top: 65px;
+            }
 
             li {
                 flex-basis: 100%;
@@ -20,6 +30,15 @@
                 grid-row-gap: 25px;
                 // margin on top
                 margin-top: 30px;
+                // responsive
+                @include resp($md) {
+                    margin-top: 45px;
+                }
+                @include resp($lg) {
+                    flex-basis: 30%;
+                    margin-top: 0px;
+                }
+
                 &:first-child {
                     margin-top: 0px;
                 }
@@ -27,10 +46,13 @@
                 img {
                     grid-area: icons;
                     width: 128px;
+                    @include resp($lg) {
+                        width: 80px;
+                    }
                 }
 
                 .texts {
-                    // font variable 
+                    // font variable
                     $font: 20;
 
                     grid-area: text;
@@ -39,17 +61,17 @@
                         @include footerFonts($font + 5 + px);
                         font-weight: bold;
                         text-align: center;
-                        // responsive 
-                        @include resp ($md) {
+                        // responsive
+                        @include resp($md) {
                             margin-bottom: 15px;
                         }
                     }
                     p {
                         @include footerFonts($font + px);
                         text-align: center;
-                        // responsive 
-                        @include resp ($md) {
-                            line-height: $font + 6 + px ;
+                        // responsive
+                        @include resp($md) {
+                            line-height: $font + 6 + px;
                         }
                     }
                 }
@@ -69,12 +91,23 @@
 
             // margin top
             margin-top: 45px;
-
+            // --------------------------------------
+            // responsive
+            // ----------------------------------------
             @include resp($md) {
                 padding: 0px;
                 border-bottom: 2.5px solid $paragraph;
                 height: auto;
                 padding-bottom: 20px;
+                max-width: 700px;
+                @include center;
+            }
+
+            @include resp($lg) {
+                margin-top: 75px;
+                width: 80%;
+                max-width: initial;
+                justify-content: center;
             }
 
             a {
@@ -82,15 +115,29 @@
                 flex-basis: (100%/3);
                 text-align: center;
                 text-decoration: none;
-
+                // ---------------------------------------------
+                // responsive
+                // -----------------------------------------------
                 @include resp($md) {
                     flex-basis: (100% / 7);
+                }
+                @include resp($lg) {
+                    // local padding variable
+                    $padding: 18;
+                    flex-basis: initial;
+                    padding: 0 $padding + px;
                 }
 
                 img {
                     display: inline-block;
                     width: 100%;
                     max-width: 50px;
+                    // ---------------------------------------
+                    // responsive
+                    // -------------------------------
+                    @include resp($lg) {
+                        width: 40px;
+                    }
                 }
             }
         }
@@ -99,9 +146,9 @@
 
 // copyright
 @at-root #copyright {
-    // local font varibale 
+    // local font varibale
     $fontSize: 20;
-//  --------------------------
+    //  --------------------------
     font-family: $para;
     color: white;
     text-align: center;
