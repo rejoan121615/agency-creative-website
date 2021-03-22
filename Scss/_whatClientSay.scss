@@ -1,0 +1,138 @@
+#client_say {
+    .container {
+        .section_heading {
+            width: 100%;
+            @include resp ($xxl) {
+                text-align: left;
+                margin-left: 280px;
+            }
+        }
+        @at-root #client_container {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto minmax(250px, auto);
+            grid-template-areas:
+                "img"
+                "comment";
+            justify-items: center;
+            margin-top: 75px;
+            // responsive
+            @include resp ($sm) {
+                grid-template-rows: 500px minmax(250px, 450px);
+            }
+            @include resp($lg) {
+                grid-template-rows: 500px 250px;
+            }
+            @include resp($xl) {
+                grid-template-columns: 2.5fr 4fr;
+                grid-template-rows: 1fr;
+                grid-template-areas:
+                    "img comment"
+                    "img comment";
+            }
+            @include resp ($xxl) {
+                align-items: center;
+                margin-top: 35px;
+            }
+            // image style
+            .client_img {
+                grid-area: img;
+                width: 100%;
+                @include resp ($sm) {
+                    width: initial;
+                }
+                @include resp ($xl) {
+                    width: 100%;
+                }
+            }
+            .client_comment {
+                grid-area: comment;
+                position: relative;
+                @include resp($lg) {
+                    display: grid;
+                    grid-template-columns: 1.5fr 1.5fr 2fr;
+                    grid-template-rows: 45px 240px;
+                    grid-template-areas:
+                        "title title title"
+                        "text text img";
+                    align-items: center;
+                }
+                @include resp($xl) {
+                    grid-template-columns: repeat(3, 1fr);
+                    grid-template-rows: auto 50px 120px;
+                    grid-template-areas:
+                        "text text text"
+                        "title title title"
+                        "img img img";
+                }
+                @include resp($xxl) {
+                    grid-template-rows: 190px 50px 150px;
+                }
+                // paragraph
+                .para {
+                    font-family: OpenSans;
+                    font-size: 25px;
+                    line-height: 30px;
+                    text-align: justify;
+                    color: #6a6a6a;
+                    font-style: italic;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    // responsive
+                    @include resp($lg) {
+                        grid-area: text;
+                    }
+                }
+                h4 {
+                    font-family: OpenSansBold;
+                    font-size: 30px;
+                    text-align: center;
+                    color: $paragraph;
+                    text-transform: capitalize;
+                    margin-top: 25px;
+                    // responsive
+                    @include resp($lg) {
+                        grid-area: title;
+                        margin-top: 0px;
+                    }
+                    @include resp($xl) {
+                        text-align: left;
+                    }
+                }
+                ul {
+                    list-style: none;
+                    overflow: hidden;
+                    width: 230px;
+                    @include center;
+                    // responsive
+                    @include resp($lg) {
+                        grid-area: img;
+                    }
+                    @include resp($xxl) {
+                        width: 380px;
+                        margin-top: 40px;
+                        margin-left: 40px;
+                    }
+                    li {
+                        float: left;
+                        width: (200/3) + px;
+                        margin-right: 10px;
+                        margin-top: 25px;
+                        &:last-child {
+                            margin-right: 0px;
+                        }
+                        @include resp($lg) {
+                            margin-top: 0px;
+                        }
+                        @include resp($xxl) {
+                            width: (350/ 3) + px;
+                            img {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
