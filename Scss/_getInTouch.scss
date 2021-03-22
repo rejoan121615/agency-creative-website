@@ -30,16 +30,27 @@
                 }
 
                 .texts {
+                    // font variable 
+                    $font: 20;
+
                     grid-area: text;
 
                     h6 {
-                        @include footerFonts(25px);
+                        @include footerFonts($font + 5 + px);
                         font-weight: bold;
                         text-align: center;
+                        // responsive 
+                        @include resp ($md) {
+                            margin-bottom: 15px;
+                        }
                     }
                     p {
-                        @include footerFonts(20px);
+                        @include footerFonts($font + px);
                         text-align: center;
+                        // responsive 
+                        @include resp ($md) {
+                            line-height: $font + 6 + px ;
+                        }
                     }
                 }
             }
@@ -59,11 +70,22 @@
             // margin top
             margin-top: 45px;
 
+            @include resp($md) {
+                padding: 0px;
+                border-bottom: 2.5px solid $paragraph;
+                height: auto;
+                padding-bottom: 20px;
+            }
+
             a {
                 display: inline-block;
                 flex-basis: (100%/3);
                 text-align: center;
                 text-decoration: none;
+
+                @include resp($md) {
+                    flex-basis: (100% / 7);
+                }
 
                 img {
                     display: inline-block;
@@ -77,18 +99,29 @@
 
 // copyright
 @at-root #copyright {
+    // local font varibale 
+    $fontSize: 20;
+//  --------------------------
     font-family: $para;
     color: white;
     text-align: center;
     width: 100%;
     // padding
     padding: 0px 20px;
-    font-size: 24px;
-    // margin top 
+    font-size: $fontSize + px;
+    line-height: $fontSize + 10 + px;
+    // margin top
     margin-top: 40px;
 
     span {
         font-weight: bold;
+        text-decoration: underline;
+    }
 
+    // responsive
+    @include resp($sm) {
+        $fontSize: $fontSize + 2;
+        font-size: $fontSize;
+        line-height: $fontSize + 10 + px;
     }
 }
