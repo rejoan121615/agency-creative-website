@@ -1110,6 +1110,18 @@ p,
     margin-top: 65px;
   }
 }
+@media only screen and (min-width: 1200px) {
+  #contact {
+    max-width: initial;
+    align-items: center;
+    margin-top: 120px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  #contact {
+    margin-top: 150px;
+  }
+}
 #contact li {
   flex-basis: 100%;
   display: grid;
@@ -1131,6 +1143,13 @@ p,
     margin-top: 0px;
   }
 }
+@media only screen and (min-width: 1200px) {
+  #contact li {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+    grid-template-areas: "icons text";
+  }
+}
 #contact li:first-child {
   margin-top: 0px;
 }
@@ -1141,6 +1160,11 @@ p,
 @media only screen and (min-width: 992px) {
   #contact li img {
     width: 80px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #contact li img {
+    width: 65px;
   }
 }
 #contact li .texts {
@@ -1159,6 +1183,11 @@ p,
     margin-bottom: 15px;
   }
 }
+@media only screen and (min-width: 1200px) {
+  #contact li .texts h6 {
+    text-align: left;
+  }
+}
 #contact li .texts p {
   font-family: "OpenSans";
   font-size: 20px;
@@ -1169,6 +1198,11 @@ p,
 @media only screen and (min-width: 768px) {
   #contact li .texts p {
     line-height: 26px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #contact li .texts p {
+    text-align: left;
   }
 }
 
@@ -1200,6 +1234,16 @@ p,
     width: 80%;
     max-width: initial;
     justify-content: center;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #social_media {
+    margin-top: 120px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  #social_media {
+    margin-top: 150px;
   }
 }
 #social_media a {

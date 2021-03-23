@@ -18,6 +18,16 @@
                 margin-top: 65px;
             }
 
+            @include resp($xl) {
+                max-width: initial;
+                align-items: center;
+                margin-top: 120px;
+            }
+
+            @include resp($xxl) {
+                margin-top: 150px;
+            }
+
             li {
                 flex-basis: 100%;
                 display: grid;
@@ -30,13 +40,20 @@
                 grid-row-gap: 25px;
                 // margin on top
                 margin-top: 30px;
+                // -------------------------------------------------------------------
                 // responsive
+                // ---------------------------------------------------------------------
                 @include resp($md) {
                     margin-top: 45px;
                 }
                 @include resp($lg) {
                     flex-basis: 30%;
                     margin-top: 0px;
+                }
+                @include resp($xl) {
+                    grid-template-columns: 1fr 2fr;
+                    grid-template-rows: auto;
+                    grid-template-areas: "icons text";
                 }
 
                 &:first-child {
@@ -48,6 +65,9 @@
                     width: 128px;
                     @include resp($lg) {
                         width: 80px;
+                    }
+                    @include resp($xl) {
+                        width: 65px;
                     }
                 }
 
@@ -61,9 +81,14 @@
                         @include footerFonts($font + 5 + px);
                         font-weight: bold;
                         text-align: center;
+                        // --------------------------------------------------------
                         // responsive
+                        // -----------------------------------------------------------
                         @include resp($md) {
                             margin-bottom: 15px;
+                        }
+                        @include resp($xl) {
+                            text-align: left;
                         }
                     }
                     p {
@@ -72,6 +97,9 @@
                         // responsive
                         @include resp($md) {
                             line-height: $font + 6 + px;
+                        }
+                        @include resp($xl) {
+                            text-align: left;
                         }
                     }
                 }
@@ -108,6 +136,13 @@
                 width: 80%;
                 max-width: initial;
                 justify-content: center;
+            }
+            @include resp($xl) {
+                margin-top: 120px;
+            }
+
+            @include resp($xxl) {
+                margin-top: 150px;
             }
 
             a {
