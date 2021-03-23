@@ -1092,8 +1092,21 @@ p,
 }
 
 #in_touch {
-  background: transparent url("../Img/footer_bg.png") no-repeat center center;
-  background-size: cover;
+  background-image: url("../Img/footer_bg_red.png"), url("../Img/footer_bg.png");
+  background-repeat: no-repeat, no-repeat;
+  background-size: 250px, cover;
+  background-position: right bottom, center center;
+}
+@media only screen and (min-width: 768px) {
+  #in_touch {
+    background-size: 45%, cover;
+    background-position: right bottom, center center;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #in_touch {
+    background-size: 320px, cover;
+  }
 }
 #contact {
   margin-top: 45px;
@@ -1307,6 +1320,7 @@ body {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: minmax(250px, auto);
   grid-template-areas: "header header" "who_we who_we" "what_do what_do" "how_works how_works" "team team" "client_say client_say" "in_touch in_touch";
+  overflow-x: hidden;
 }
 
 .btn {

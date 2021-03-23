@@ -1,6 +1,23 @@
 #in_touch {
-    background: transparent url("../Img/footer_bg.png") no-repeat center center;
-    background-size: cover;
+    background-image: url("../Img/footer_bg_red.png"),
+        url("../Img/footer_bg.png");
+    background-repeat: no-repeat, no-repeat;
+    background-size: 250px, cover;
+    background-position: right bottom, center center;
+
+    // --------------------------------------------------- 
+    // responsive 
+    // ---------------------------------------------------
+    @include resp ($md) {
+        background-size: 45%, cover;
+        background-position: right bottom, center center;
+    }
+
+    @include resp ($xl) {
+        background-size: 320px, cover;
+    }
+
+
     .container {
         // contact section
         @at-root #contact {
