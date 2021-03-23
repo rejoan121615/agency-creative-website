@@ -10,7 +10,7 @@
         position: relative;
         margin-top: 15px;
         max-height: 100px;
-        // margin 
+        // margin
         padding-top: 0px;
         padding-bottom: 0px;
 
@@ -122,11 +122,18 @@
             grid-template-columns: 1fr;
             grid-template-rows: 2fr 1fr;
             grid-template-areas: "image" "texts";
-            padding-left: 15px;
-            padding-right: 15px;
+            background-image: url("../Img/main_transparent_red.png");
+            background-repeat: no-repeat;
+            background-position: 10px 95px;
+            background-size: 70%;
+            margin-bottom: 130px;
             // media query
             @include resp($x_sm) {
                 grid-template-rows: 2fr 1.5fr;
+            }
+            @include resp ($sm) {
+                margin-bottom: 0px;
+                grid-template-rows: 2fr 600px;
             }
             @include resp($lg) {
                 grid-template-columns: 35px repeat(5, 1fr) 35px;
@@ -140,7 +147,10 @@
                 width: 100%;
                 margin-top: 80px;
                 text-align: center;
-                // responsive design
+                @include resp ($sm) {
+                    max-width: 600px;
+                    @include center;
+                }
                 @include resp($lg) {
                     grid-row: 1/-2;
                     grid-column: 4/-1;
@@ -154,20 +164,28 @@
 
                 img {
                     width: 100%;
-                    max-width: 620px;
                     display: inline-block;
+                    max-width: unquote($x_sm);
+                    // ---------------------------------------------------------
+                    // responsive
+                    // ---------------------------------------------------------
+                    @include resp($sm) {
+                        max-width: 100%;
+                    }
                     @include resp($lg) {
                         max-width: initial;
                     }
                 }
             }
+            // ---------------------------------------
+            // main section container
+            // -----------------------------------------
             .texts {
                 width: 100%;
                 grid-area: texts;
                 // text style
                 font-family: "LemonMilk";
                 text-align: center;
-                color: white;
                 text-transform: uppercase;
                 // responsive design
                 @include resp($lg) {
@@ -180,12 +198,13 @@
                     max-width: $xl;
                 }
                 // heading
+                // selector-nest($selectors:)
                 h1 {
-                    font-size: 3.2em;
+                    font-size: 48px;
                     line-height: 55px;
                     // media query
                     @include resp($x_sm) {
-                        font-size: 75px;
+                        font-size: 55px;
                         line-height: 65px;
                         &:first-child {
                             margin-top: 40px;

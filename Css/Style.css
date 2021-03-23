@@ -330,12 +330,21 @@ p,
   grid-template-columns: 1fr;
   grid-template-rows: 2fr 1fr;
   grid-template-areas: "image" "texts";
-  padding-left: 15px;
-  padding-right: 15px;
+  background-image: url("../Img/main_transparent_red.png");
+  background-repeat: no-repeat;
+  background-position: 10px 95px;
+  background-size: 70%;
+  margin-bottom: 130px;
 }
 @media only screen and (min-width: 320px) {
   #main {
     grid-template-rows: 2fr 1.5fr;
+  }
+}
+@media only screen and (min-width: 576px) {
+  #main {
+    margin-bottom: 0px;
+    grid-template-rows: 2fr 600px;
   }
 }
 @media only screen and (min-width: 992px) {
@@ -354,6 +363,13 @@ p,
   margin-top: 80px;
   text-align: center;
 }
+@media only screen and (min-width: 576px) {
+  #main .img_container {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 @media only screen and (min-width: 992px) {
   #main .img_container {
     grid-row: 1/-2;
@@ -370,8 +386,13 @@ p,
 }
 #main .img_container img {
   width: 100%;
-  max-width: 620px;
   display: inline-block;
+  max-width: 320px;
+}
+@media only screen and (min-width: 576px) {
+  #main .img_container img {
+    max-width: 100%;
+  }
 }
 @media only screen and (min-width: 992px) {
   #main .img_container img {
@@ -383,7 +404,6 @@ p,
   grid-area: texts;
   font-family: "LemonMilk";
   text-align: center;
-  color: white;
   text-transform: uppercase;
 }
 @media only screen and (min-width: 992px) {
@@ -400,12 +420,12 @@ p,
   }
 }
 #main .texts h1 {
-  font-size: 3.2em;
+  font-size: 48px;
   line-height: 55px;
 }
 @media only screen and (min-width: 320px) {
   #main .texts h1 {
-    font-size: 75px;
+    font-size: 55px;
     line-height: 65px;
   }
   #main .texts h1:first-child {
