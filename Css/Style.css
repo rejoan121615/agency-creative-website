@@ -355,6 +355,8 @@ p,
     max-width: 992px;
     margin-left: auto;
     margin-right: auto;
+    background-position: 330px 20px;
+    background-size: 55%;
   }
 }
 #main .img_container {
@@ -405,6 +407,9 @@ p,
   font-family: "LemonMilk";
   text-align: center;
   text-transform: uppercase;
+  background-image: url("../Img/main-bg.png");
+  background-clip: text;
+  background-color: #ffffff75;
 }
 @media only screen and (min-width: 992px) {
   #main .texts {

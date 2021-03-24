@@ -131,7 +131,7 @@
             @include resp($x_sm) {
                 grid-template-rows: 2fr 1.5fr;
             }
-            @include resp ($sm) {
+            @include resp($sm) {
                 margin-bottom: 0px;
                 grid-template-rows: 2fr 600px;
             }
@@ -141,13 +141,15 @@
                 grid-template-areas: initial;
                 max-width: unquote($string: $lg);
                 @include center;
+                background-position: 330px 20px;
+                background-size: 55%;
             }
             .img_container {
                 grid-area: image;
                 width: 100%;
                 margin-top: 80px;
                 text-align: center;
-                @include resp ($sm) {
+                @include resp($sm) {
                     max-width: 600px;
                     @include center;
                 }
@@ -187,6 +189,9 @@
                 font-family: "LemonMilk";
                 text-align: center;
                 text-transform: uppercase;
+                background-image: url("../Img/main-bg.png");
+                background-clip: text;
+                background-color: #ffffff75;
                 // responsive design
                 @include resp($lg) {
                     grid-column: 2 / span 3;
