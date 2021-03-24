@@ -1133,6 +1133,9 @@ p,
 #client_container .client_comment ul li img {
   width: 100%;
 }
+#client_container .client_comment ul .active {
+  border: 2px solid red;
+}
 
 #in_touch {
   background-image: url("../Img/footer_bg_red.png"), url("../Img/footer_bg.png");

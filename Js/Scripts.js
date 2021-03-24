@@ -75,7 +75,18 @@ const path = "./Img/Client_list/";
 const commentImagerHandler = (index, commentList) => {
     imageContainer.src = path + commentList[index].img;
     comment.innerHTML = commentList[index].comment;
-    title.innerHTML = commentList[index].name + " " + commentList[index].title;
+    title.innerHTML =
+        commentList[index].name + " / " + commentList[index].title;
+    selectedTagMark(index);
+};
+
+// selected tag mark
+const selectedTagMark = (index) => {
+    allClientBtn.forEach((item) => {
+        item.classList.remove("active");
+    });
+    allClientBtn[index].classList.add("active");
+    console.log("working");
 };
 
 allClientBtn.forEach((item, index) => {
