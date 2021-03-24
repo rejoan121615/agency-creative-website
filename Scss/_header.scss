@@ -137,7 +137,7 @@
             }
             @include resp($lg) {
                 grid-template-columns: 35px repeat(5, 1fr) 35px;
-                grid-template-rows: repeat(5, minmax(75px, 150px));
+                grid-template-rows: repeat(5, 120px);
                 grid-template-areas: initial;
                 max-width: unquote($string: $lg);
                 @include center;
@@ -176,6 +176,7 @@
                     }
                     @include resp($lg) {
                         max-width: initial;
+                        width: 115%;
                     }
                 }
             }
@@ -224,6 +225,8 @@
                         line-height: 108px;
                     }
                     @include resp($lg) {
+                        font-size: 95px;
+                        line-height: 85px;
                         &:first-child {
                             margin-top: initial;
                         }
@@ -243,6 +246,9 @@
                     @include resp($md) {
                         font-size: 70px;
                         line-height: 70px;
+                    }
+                    @include resp ($lg) {
+                        font-size: 55px;
                     }
                 }
 

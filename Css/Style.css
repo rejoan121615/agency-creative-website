@@ -350,7 +350,7 @@ p,
 @media only screen and (min-width: 992px) {
   #main {
     grid-template-columns: 35px repeat(5, 1fr) 35px;
-    grid-template-rows: repeat(5, minmax(75px, 150px));
+    grid-template-rows: repeat(5, 120px);
     grid-template-areas: initial;
     max-width: 992px;
     margin-left: auto;
@@ -399,6 +399,7 @@ p,
 @media only screen and (min-width: 992px) {
   #main .img_container img {
     max-width: initial;
+    width: 115%;
   }
 }
 #main .texts {
@@ -450,6 +451,10 @@ p,
   }
 }
 @media only screen and (min-width: 992px) {
+  #main .texts h1 {
+    font-size: 95px;
+    line-height: 85px;
+  }
   #main .texts h1:first-child {
     margin-top: initial;
   }
@@ -474,6 +479,11 @@ p,
   #main .texts h4 {
     font-size: 70px;
     line-height: 70px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #main .texts h4 {
+    font-size: 55px;
   }
 }
 #main .texts .btn {
