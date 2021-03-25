@@ -1,0 +1,1 @@
+This is a simple project created by Mohd Rejoan. Design is taken from psdfreebies. This project created only for practice purpose. Things used in this project Html, CSS (flexbox, grid), sass, and vanilla javascript.
