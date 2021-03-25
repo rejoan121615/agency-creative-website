@@ -144,6 +144,22 @@
                 background-position: 330px 20px;
                 background-size: 55%;
             }
+
+            @include resp($xl) {
+                max-width: unquote($string: $xl);
+                padding-top: 50px;
+                padding-bottom: 90px;
+                background-position: 300px 0px;
+                background-size: 80%;
+            }
+
+            @include resp($xxl) {
+                max-width: unquote($string: $xxl);
+                padding-top: 100px;
+                padding-bottom: 130px;
+                background-position: 390px 0px;
+            }
+
             .img_container {
                 grid-area: image;
                 width: 100%;
@@ -178,6 +194,12 @@
                         max-width: initial;
                         width: 115%;
                     }
+                    @include resp($xl) {
+                        width: 123%;
+                    }
+                    @include resp($xxl) {
+                        width: 132%;
+                    }
                 }
             }
             // ---------------------------------------
@@ -192,7 +214,7 @@
                 text-transform: uppercase;
                 background-image: url("../Img/main-bg.png");
                 background-clip: text;
-                background-color: #ffffff75;
+                background-color: #ffffff7d;
                 // responsive design
                 @include resp($lg) {
                     grid-column: 2 / span 3;
@@ -201,7 +223,7 @@
                     z-index: 5;
                 }
                 @include resp($xl) {
-                    max-width: $xl;
+                    margin-top: 30px;
                 }
                 // heading
                 // selector-nest($selectors:)
@@ -231,6 +253,10 @@
                             margin-top: initial;
                         }
                     }
+                    @include resp($xl) {
+                        font-size: 135px;
+                        line-height: 115px;
+                    }
                 }
                 h4 {
                     font-size: 2.5em;
@@ -247,9 +273,22 @@
                         font-size: 70px;
                         line-height: 70px;
                     }
-                    @include resp ($lg) {
+                    @include resp($lg) {
                         font-size: 55px;
                     }
+                    @include resp($xl) {
+                        font-size: 85px;
+                        line-height: 85px;
+                    }
+                }
+
+                // $header_selector: selector-nest($selectors);
+
+                // #{$header_selector} {
+                //     background-color: transparent;
+                // }
+                h1, h4 {
+                    color: transparent;
                 }
 
                 // btn style
