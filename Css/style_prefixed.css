@@ -185,6 +185,8 @@ p,
 
 .container, #how_works .container, #what_do .container {
   width: 100%;
+  position: relative;
+  z-index: 20;
   padding: 65px 10px 65px 10px;
 }
 @media only screen and (min-width: 576px) {
@@ -981,7 +983,6 @@ p,
 }
 #how_works .container {
   position: relative;
-  z-index: 10;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr;
@@ -1138,6 +1139,35 @@ p,
 
 #team {
   background-color: #f5f5f5;
+  position: relative;
+}
+#team .team_background {
+  position: absolute;
+  top: -125px;
+  left: 0px;
+  z-index: 15;
+  width: 125px;
+}
+@media only screen and (min-width: 768px) {
+  #team .team_background {
+    width: 220px;
+    top: -220px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #team .team_background {
+    width: 275px;
+    top: -275px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  #team .team_background {
+    position: absolute;
+    top: -325px;
+    left: 0px;
+    z-index: 15;
+    width: 325px;
+  }
 }
 #team .container {
   width: 100%;
@@ -1218,6 +1248,7 @@ p,
   grid-template-rows: auto;
   grid-row-gap: 70px;
   max-width: 680px;
+  justify-items: center;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1241,10 +1272,11 @@ p,
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    justify-items: initial;
   }
 }
 #slider_wrapper .slider_container .child_container .sli_child {
-  width: 100%;
+  width: 80%;
   position: relative;
   z-index: 5;
   text-align: center;
@@ -1300,10 +1332,15 @@ p,
   text-align: center;
 }
 #slider_wrapper .slider_container .child_container .active {
-  width: 33%;
+  width: 100%;
   -webkit-transition: width 0.5s;
   -o-transition: width 0.5s;
   transition: width 0.5s;
+}
+@media only screen and (min-width: 1200px) {
+  #slider_wrapper .slider_container .child_container .active {
+    width: 33%;
+  }
 }
 #slider_wrapper .slider_container .child_container .active .name {
   width: 80%;
@@ -1317,6 +1354,44 @@ p,
   display: block;
 }
 
+#client_say {
+  background: white url("../Img/what_client_say_bg2.png") no-repeat right top;
+  background-size: 350px;
+  position: relative;
+}
+#client_say .what_client_bg {
+  width: 100%;
+  max-width: 250px;
+  position: absolute;
+  left: 0px;
+  top: 350px;
+  z-index: 10;
+}
+@media only screen and (min-width: 992px) {
+  #client_say .what_client_bg {
+    max-width: 400px;
+    top: 200px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #client_say .what_client_bg {
+    top: -35px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  #client_say .what_client_bg {
+    width: 30%;
+    max-width: 570px;
+    position: absolute;
+    left: 0px;
+    top: -120px;
+    z-index: 10;
+  }
+}
+#client_say .container {
+  position: relative;
+  z-index: 50;
+}
 #client_say .container .section_heading {
   width: 100%;
 }
