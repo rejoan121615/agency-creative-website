@@ -1,11 +1,5 @@
 "use strict";
 
-
-
-
-
-
-
 // menu btn change animation
 // -------------------------------------------------------------------------
 const btn = document.querySelector("#nav_btn i");
@@ -84,11 +78,10 @@ const commentImagerHandler = (index, commentList) => {
     comment.innerHTML = commentList[index].comment;
     title.innerHTML =
         commentList[index].name + " / " + commentList[index].title;
-    
+
     // active class controller
     activeClassHandler(allClientBtn, index);
 };
-
 
 allClientBtn.forEach((item, index) => {
     item.addEventListener("click", () => {
@@ -102,65 +95,42 @@ allClientBtn.forEach((item, index) => {
 
 // get all tags
 const sliderList = document.querySelectorAll(".slider_container .sli_child");
-let globalCounter = 0 ;
-
-// active class controller
-const sliderHandler = (slideTag) => {
-    sliderList.forEach((item, index) => {
-        item.classList.remove("active");
-    });
-    slideTag.classList.add("active");
-};
+// global counter for btn slide
+let globalCounter = 0;
+// slider btn
+const [leftBtn, rightBtn] = document.querySelectorAll(".sl_btn");
 
 // event handler
-sliderList.forEach((item, index) => { 
+sliderList.forEach((item, index) => {
     item.addEventListener("click", () => {
         // activeClassHandler(sliderList, index)
-        sliderHandler(item);
-        if (index >= 2) {globalCounter = 0} else {globalCounter = index + 1}
+        activeClassHandler(sliderList, index);
+        // sliderHandler(item);
+        if (index >= 2) {
+            globalCounter = 0;
+        } else {
+            globalCounter = index + 1;
+        }
     });
 });
 
+// global counter controller
 
+leftBtn.addEventListener("click", function () {
+    globalCounter >= 2
+        ? (globalCounter = 0)
+        : (globalCounter = globalCounter + 1);
+    activeClassHandler(sliderList, globalCounter);
+});
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// btn slider
-
-const [leftBtn, rightBtn] = document.querySelectorAll(".sl_btn");
-// sliderList 
-
-
-
-
-// leftBtn.addEventListener("click", function () {
-
-//     activeClassHandler(sliderList, globalCounter)
-
-//     if (globalCounter >= 2) {
-//         globalCounter = 0;
-//     } else {
-//         globalCounter = globalCounter + 1;
-//     }
-// });
-
-
-
+rightBtn.addEventListener("click", function () {
+    // activeClassHandler(sliderList, globalCounter);
+    globalCounter <= 0
+        ? (globalCounter = 2)
+        : (globalCounter = globalCounter - 1);
+    console.log(globalCounter);
+    activeClassHandler(sliderList, globalCounter);
+});
 
 // ---------------------------------------------------------------
 // menu bar function
@@ -170,20 +140,19 @@ const getListItem = document.querySelectorAll("#navbar li");
 
 getListItem.forEach((item, index) => {
     item.addEventListener("click", () => {
-        activeClassHandler(getListItem, index)
+        activeClassHandler(getListItem, index);
     });
 });
 
-
 // ----------------------------------------------------------------------------------------
 // ----------------------------------------------------------------------------------------
-// globally active class handler 
+// globally active class handler
 // ---------------------------------------------------------------------------------
 // --------------------------------------------------------------------------
 function activeClassHandler(tagList, index) {
     tagList.forEach((item, index) => {
-        item.classList.remove('active')
-    })
-    // add active class 
-    tagList[index].classList.add('active');
+        item.classList.remove("active");
+    });
+    // add active class
+    tagList[index].classList.add("active");
 }
