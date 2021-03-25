@@ -1,4 +1,11 @@
 "use strict";
+
+
+
+
+
+
+
 // menu btn change animation
 // -------------------------------------------------------------------------
 const btn = document.querySelector("#nav_btn i");
@@ -77,17 +84,11 @@ const commentImagerHandler = (index, commentList) => {
     comment.innerHTML = commentList[index].comment;
     title.innerHTML =
         commentList[index].name + " / " + commentList[index].title;
-    selectedTagMark(index);
+    
+    // active class controller
+    activeClassHandler(allClientBtn, index);
 };
 
-// selected tag mark
-const selectedTagMark = (index) => {
-    allClientBtn.forEach((item) => {
-        item.classList.remove("active");
-    });
-    allClientBtn[index].classList.add("active");
-    console.log("working");
-};
 
 allClientBtn.forEach((item, index) => {
     item.addEventListener("click", () => {
@@ -95,63 +96,94 @@ allClientBtn.forEach((item, index) => {
     });
 });
 
-
-
 // ---------------------------------------------------------------------------
-// team slider 
+// team slider
 // ----------------------------------------------------------------------------------------
 
-// get all tags 
-const [leftBtn, rightBtn] = document.querySelectorAll('.sl_btn');
+// get all tags
 const sliderList = document.querySelectorAll(".slider_container .sli_child");
+let globalCounter = 0 ;
 
-console.log(leftBtn);
-console.log(rightBtn)
-
-
+// active class controller
 const sliderHandler = (slideTag) => {
     sliderList.forEach((item, index) => {
-        item.classList.remove('active');
-    })
-    slideTag.classList.add('active');
-}
+        item.classList.remove("active");
+    });
+    slideTag.classList.add("active");
+};
 
-
-sliderList.forEach((item, index) => {
-    item.addEventListener('click', () => {
+// event handler
+sliderList.forEach((item, index) => { 
+    item.addEventListener("click", () => {
+        // activeClassHandler(sliderList, index)
         sliderHandler(item);
-    })
-})
+        if (index >= 2) {globalCounter = 0} else {globalCounter = index + 1}
+    });
+});
 
 
-// btn slider 
 
-// let sliderCounter = 0;
 
-// leftBtn.addEventListener('click', () => {
-//     sliderList[]
-// })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// btn slider
+
+const [leftBtn, rightBtn] = document.querySelectorAll(".sl_btn");
+// sliderList 
+
+
+
+
+// leftBtn.addEventListener("click", function () {
+
+//     activeClassHandler(sliderList, globalCounter)
+
+//     if (globalCounter >= 2) {
+//         globalCounter = 0;
+//     } else {
+//         globalCounter = globalCounter + 1;
+//     }
+// });
 
 
 
 
 // ---------------------------------------------------------------
-// menu bar function 
+// menu bar function
 // ------------------------------------------------------------
 
-const getListItem = document.querySelectorAll('#navbar li');
-
-
-const activeHandler = (index) => {
-    getListItem.forEach((item, index) => {
-        item.classList.remove('active');
-    })
-    getListItem[index].classList.add('active');
-}
-
+const getListItem = document.querySelectorAll("#navbar li");
 
 getListItem.forEach((item, index) => {
-    item.addEventListener('click', () => {
-        activeHandler(index);
+    item.addEventListener("click", () => {
+        activeClassHandler(getListItem, index)
+    });
+});
+
+
+// ----------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------
+// globally active class handler 
+// ---------------------------------------------------------------------------------
+// --------------------------------------------------------------------------
+function activeClassHandler(tagList, index) {
+    tagList.forEach((item, index) => {
+        item.classList.remove('active')
     })
-})
+    // add active class 
+    tagList[index].classList.add('active');
+}
