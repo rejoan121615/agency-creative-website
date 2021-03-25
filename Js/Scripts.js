@@ -42,21 +42,21 @@ const allClientComment = [
         name: "Jinn Snow",
         title: "Company Ceo",
         comment:
-            "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et error at vero iste voluptatum aliquam est minus quo adipisci cum nemo, itaque culpa eum a, repellat dicta possimus quos sed voluptates nam molestiae, fugiat aspernatur.",
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu ",
         img: "client-1.png",
     },
     {
         name: "Manha Rousan",
         title: "CFO",
         comment:
-            "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et error at vero iste voluptatum aliquam est minus quo adipisci cum nemo, itaque culpa eum a, repellat dicta possimus quos sed voluptates nam molestiae, fugiat aspernatur.",
+            "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
         img: "client-2.png",
     },
     {
         name: "Marianna Hanaf",
         title: "General Manager",
         comment:
-            "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et error at vero iste voluptatum aliquam est minus quo adipisci cum nemo, itaque culpa eum a, repellat dicta possimus quos sed voluptates nam molestiae, fugiat aspernatur.",
+            "fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.dicta possimus quos sed voluptates nam molestiae, fugiat aspernatur.",
         img: "client-3.png",
     },
 ];
@@ -94,3 +94,64 @@ allClientBtn.forEach((item, index) => {
         commentImagerHandler(index, allClientComment);
     });
 });
+
+
+
+// ---------------------------------------------------------------------------
+// team slider 
+// ----------------------------------------------------------------------------------------
+
+// get all tags 
+const [leftBtn, rightBtn] = document.querySelectorAll('.sl_btn');
+const sliderList = document.querySelectorAll(".slider_container .sli_child");
+
+console.log(leftBtn);
+console.log(rightBtn)
+
+
+const sliderHandler = (slideTag) => {
+    sliderList.forEach((item, index) => {
+        item.classList.remove('active');
+    })
+    slideTag.classList.add('active');
+}
+
+
+sliderList.forEach((item, index) => {
+    item.addEventListener('click', () => {
+        sliderHandler(item);
+    })
+})
+
+
+// btn slider 
+
+// let sliderCounter = 0;
+
+// leftBtn.addEventListener('click', () => {
+//     sliderList[]
+// })
+
+
+
+
+// ---------------------------------------------------------------
+// menu bar function 
+// ------------------------------------------------------------
+
+const getListItem = document.querySelectorAll('#navbar li');
+
+
+const activeHandler = (index) => {
+    getListItem.forEach((item, index) => {
+        item.classList.remove('active');
+    })
+    getListItem[index].classList.add('active');
+}
+
+
+getListItem.forEach((item, index) => {
+    item.addEventListener('click', () => {
+        activeHandler(index);
+    })
+})
