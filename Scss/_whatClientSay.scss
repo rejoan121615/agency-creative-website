@@ -1,8 +1,43 @@
 #client_say {
+    // background image 
+    background: white url('../Img/what_client_say_bg2.png') no-repeat right top;
+    background-size: 350px;
+    position: relative;
+    // what client say backgroud
+    .what_client_bg {
+        width: 100%;
+        max-width: 250px;
+        position: absolute;
+        left: 0px;
+        top: 350px;
+        z-index: 10;
+
+        @include resp ($lg) {
+            max-width: 400px;
+            top: 200px;
+        }
+
+        @include resp ($xl) {
+            top: -35px;
+        }
+
+        @include resp($xxl) {
+            width: 30%;
+            max-width: 570px;
+            position: absolute;
+            left: 0px;
+            top: -120px;
+            z-index: 10;
+        }
+    }
+    // container
     .container {
+        position: relative;
+        z-index: 50;
+
         .section_heading {
             width: 100%;
-            @include resp ($xxl) {
+            @include resp($xxl) {
                 text-align: left;
                 margin-left: 280px;
             }
@@ -18,7 +53,7 @@
             margin-top: 75px;
             grid-row-gap: 25px;
             // responsive
-            @include resp ($sm) {
+            @include resp($sm) {
                 grid-template-rows: 500px minmax(250px, 450px);
             }
             @include resp($lg) {
@@ -31,7 +66,7 @@
                     "img comment"
                     "img comment";
             }
-            @include resp ($xxl) {
+            @include resp($xxl) {
                 align-items: center;
                 margin-top: 35px;
             }
@@ -39,10 +74,10 @@
             .client_img {
                 grid-area: img;
                 width: 100%;
-                @include resp ($sm) {
+                @include resp($sm) {
                     width: initial;
                 }
-                @include resp ($xl) {
+                @include resp($xl) {
                     width: 100%;
                 }
 
@@ -91,7 +126,7 @@
                         font-size: 22px;
                     }
 
-                    @include resp ($xxl) {
+                    @include resp($xxl) {
                         font-size: 25px;
                     }
                 }
@@ -142,12 +177,12 @@
                                 width: 100%;
                             }
                         }
-                        // image inside list 
+                        // image inside list
                         img {
                             width: 100%;
                         }
                     }
-                    // active style 
+                    // active style
                     .active {
                         border: 2px solid red;
                     }

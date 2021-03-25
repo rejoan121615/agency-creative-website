@@ -27,7 +27,6 @@
     .container {
         @extend %container;
         position: relative;
-        z-index: 10;
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr auto minmax(100px, auto);

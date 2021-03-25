@@ -1,5 +1,36 @@
 #team {
     background-color: $bg_not_white;
+    position: relative;
+
+    .team_background {
+        position: absolute;
+        top: -125px;
+        left: 0px;
+        z-index: 15;
+        width: 125px;
+
+        // ------------------------------------------
+        // responsive design
+        // -------------------------------------------
+
+        @include resp ($md) {
+            width: 220px;
+            top: -220px;
+        }
+
+
+        @include resp ($xl) {
+            width: 275px;
+            top: -275px;
+        }
+        @include resp($xxl) {
+            position: absolute;
+            top: -325px;
+            left: 0px;
+            z-index: 15;
+            width: 325px;
+        }
+    }
 
     .container {
         width: 100%;
@@ -33,7 +64,7 @@
                 display: block;
                 // font-size: 300px;
             }
-            @include resp ($xxl) {
+            @include resp($xxl) {
                 font-size: 280px;
             }
         }
@@ -59,6 +90,7 @@
                 grid-template-rows: auto;
                 grid-row-gap: 70px;
                 max-width: 680px;
+                justify-items: center;
                 @include center;
                 // responsive
                 @include resp($xl) {
@@ -67,20 +99,20 @@
                     flex-flow: row wrap;
                     justify-content: space-between;
                     align-items: center;
+                    justify-items: initial;
                 }
                 // -----------------------------------------------------------------------
                 // child list
                 // ------------------------------------------------------------------------
                 .sli_child {
-                    width: 100%;
+                    width: 80%;
                     position: relative;
                     z-index: 5;
                     text-align: center;
-                // slider child 
-                @include resp ($xl) {
-                    width: 28%;
-                }
-                
+                    // slider child
+                    @include resp($xl) {
+                        width: 28%;
+                    }
 
                     .slider_img {
                         width: 100%;
@@ -127,10 +159,14 @@
                     }
                 }
 
-
                 .active {
-                    width: 33%;
+                    width: 100%;
+                    // width: 33%;
                     transition: width 0.5s;
+
+                    @include resp($xl) {
+                        width: 33%;
+                    }
 
                     .name {
                         width: 80%;

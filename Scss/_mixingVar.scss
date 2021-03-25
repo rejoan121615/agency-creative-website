@@ -168,6 +168,8 @@ $max_screen: "1920px";
 // container widht
 %container {
     width: 100%;
+    position: relative;
+    z-index: 20;
     padding: 65px 10px 65px 10px;
     // responsive
     @include resp($sm) {
