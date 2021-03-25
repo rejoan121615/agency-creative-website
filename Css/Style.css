@@ -1031,6 +1031,7 @@ p,
   grid-template-areas: "img" "comment";
   justify-items: center;
   margin-top: 75px;
+  grid-row-gap: 25px;
 }
 @media only screen and (min-width: 576px) {
   #client_container {
@@ -1069,6 +1070,12 @@ p,
     width: 100%;
   }
 }
+#client_container .client_img img {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
 #client_container .client_comment {
   grid-area: comment;
   position: relative;
@@ -1096,7 +1103,7 @@ p,
 }
 #client_container .client_comment .para {
   font-family: OpenSans;
-  font-size: 25px;
+  font-size: 20px;
   line-height: 30px;
   text-align: justify;
   color: #6a6a6a;
@@ -1107,6 +1114,12 @@ p,
 @media only screen and (min-width: 992px) {
   #client_container .client_comment .para {
     grid-area: text;
+    font-size: 22px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  #client_container .client_comment .para {
+    font-size: 25px;
   }
 }
 #client_container .client_comment h4 {
@@ -1168,6 +1181,12 @@ p,
   #client_container .client_comment ul li img {
     width: 100%;
   }
+}
+#client_container .client_comment ul li img {
+  width: 100%;
+}
+#client_container .client_comment ul .active {
+  border: 2px solid red;
 }
 
 #in_touch {
