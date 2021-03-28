@@ -109,6 +109,7 @@
                     position: relative;
                     z-index: 5;
                     text-align: center;
+                    cursor: pointer;
                     // slider child
                     @include resp($xl) {
                         width: 28%;

@@ -94,17 +94,21 @@
             @media only screen and (min-width: $xl) {
                 min-width: 960px;
             }
-            @include resp ($xxl) {
+            @include resp($xxl) {
                 max-width: 1100px;
             }
             li {
                 font-family: "LatoBold";
                 font-size: 1em;
                 list-style: none;
-                width: (100% / 8);
+                // width: (100% / 8);
+                width: 100%;
                 text-align: center;
                 &:first-child {
                     border-top: none;
+                }
+                @include resp($lg) {
+                    width: (100% / 8);
                 }
 
                 a {
@@ -197,7 +201,7 @@
                 img {
                     width: 100%;
                     display: inline-block;
-                    max-width: unquote($x_sm);
+                    // max-width: unquote($x_sm);
                     // ---------------------------------------------------------
                     // responsive
                     // ---------------------------------------------------------
