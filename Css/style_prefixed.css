@@ -368,11 +368,16 @@ p,
   font-family: "LatoBold";
   font-size: 1em;
   list-style: none;
-  width: 12.5%;
+  width: 100%;
   text-align: center;
 }
 #nav_wrapper #navbar li:first-child {
   border-top: none;
+}
+@media only screen and (min-width: 992px) {
+  #nav_wrapper #navbar li {
+    width: 12.5%;
+  }
 }
 #nav_wrapper #navbar li a {
   display: inline-block;
@@ -482,7 +487,6 @@ p,
 #main .img_container img {
   width: 100%;
   display: inline-block;
-  max-width: 320px;
 }
 @media only screen and (min-width: 576px) {
   #main .img_container img {
@@ -1280,6 +1284,7 @@ p,
   position: relative;
   z-index: 5;
   text-align: center;
+  cursor: pointer;
 }
 @media only screen and (min-width: 1200px) {
   #slider_wrapper .slider_container .child_container .sli_child {
@@ -1578,6 +1583,7 @@ p,
   width: 66.6666666667px;
   margin-right: 10px;
   margin-top: 25px;
+  cursor: pointer;
 }
 #client_container .client_comment ul li:last-child {
   margin-right: 0px;
